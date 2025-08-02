@@ -124,7 +124,7 @@ export default function HomeScreen() {
             recipes={specialRecipes}
             title="Receitas Especiais"
             onRecipePress={handleRecipePress}
-            layout="mixed"
+            layout="vertical"
           />
         </View>
       </ScrollView>
