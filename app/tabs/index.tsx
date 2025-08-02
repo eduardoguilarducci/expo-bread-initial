@@ -1,7 +1,7 @@
-import { PromoBanner } from "@/components/PromoBanner";
 import {
   RecipeCarousel,
   RestaurantSection,
+  SpecialRecipesSection,
   ThemedView,
 } from "@/src/components";
 import { useRecipes } from "@/src/hooks/useRecipes";
@@ -28,6 +28,11 @@ export default function HomeScreen() {
     (recipe) => recipe.recipeType === "pizza"
   );
 
+  // Filter special recipes
+  const specialRecipes = recipes.filter(
+    (recipe) => recipe.recipeType === "special"
+  );
+
   // Debug logging
   console.log("All recipes:", recipes.length);
   console.log("Bread recipes:", breadRecipes.length);
@@ -39,6 +44,10 @@ export default function HomeScreen() {
   console.log(
     "Pizza recipe names:",
     pizzaRecipes.map((r) => r.name)
+  );
+  console.log(
+    "Special recipe names:",
+    specialRecipes.map((r) => r.name)
   );
 
   const handleSeeAllRecipes = () => {
@@ -71,6 +80,9 @@ export default function HomeScreen() {
         style={styles.scrollView}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollContent}
+        bounces={false}
+        alwaysBounceVertical={false}
+        overScrollMode="never"
       >
         <View style={styles.visualHeader} />
         <View style={styles.divider} />
@@ -79,7 +91,7 @@ export default function HomeScreen() {
         <View style={styles.breadSection}>
           <RestaurantSection
             section={{
-              title: "Receitas de Pão",
+              title: "Pão de Fermentação Natural",
               restaurants: breadRecipes.map((recipe) => ({
                 id: recipe.id,
                 name: recipe.name,
@@ -101,12 +113,20 @@ export default function HomeScreen() {
         <View style={styles.pizzaSection}>
           <RecipeCarousel
             recipes={pizzaRecipes}
-            title="Receitas de Pizza"
+            title="Pizza de Longa Fermentação"
             onRecipePress={handleRecipePress}
           />
         </View>
 
-        <PromoBanner />
+        {/* Special Recipes Section */}
+        <View style={styles.specialSection}>
+          <SpecialRecipesSection
+            recipes={specialRecipes}
+            title="Receitas Especiais"
+            onRecipePress={handleRecipePress}
+            layout="mixed"
+          />
+        </View>
       </ScrollView>
     </ThemedView>
   );
@@ -130,6 +150,9 @@ const styles = StyleSheet.create({
   },
   pizzaSection: {
     marginBottom: 16, // Add specific margin for pizza section
+  },
+  specialSection: {
+    marginBottom: 32, // Increased margin to ensure proper spacing from tab bar
   },
   allRecipesTitle: {
     fontSize: 22,
@@ -162,5 +185,6 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     flexGrow: 1,
+    paddingBottom: 100, // Increased padding to account for tab bar height
   },
 });

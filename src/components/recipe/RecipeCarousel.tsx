@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#222",
     marginLeft: 0,
-    marginBottom: 2, // Reduced from 8 to bring title even closer to bread recipes
+    marginBottom: 12, // Increased from 2 to 12 to add space between title and cards
   },
   scrollContainer: {
     paddingRight: 16,

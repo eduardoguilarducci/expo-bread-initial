@@ -644,6 +644,280 @@ export const mockRecipes: Recipe[] = [
 
 🔹 **Cocção** - Asse a 270°C por 8-12 minutos até queijos derreterem e borda dourar.`,
   },
+  {
+    id: "special-1",
+    name: "Pão de Levain Artesanal",
+    recipeType: "special",
+    description:
+      "Pão de fermentação natural com 72 horas de desenvolvimento, casca crocante e miolo aerado. Uma obra-prima da panificação artesanal.",
+    image: require("../../assets/images/levain_big.jpg"),
+    totalDoughWeight: 1200,
+    breadWeight: 600,
+    defaultQuantity: 2,
+    time: "72 horas",
+    difficultyLevel: "Difícil",
+    cuisine: "Artesanal",
+    location: "São Francisco, EUA",
+    ratings: "4.9 ⭐ (567 avaliações)",
+    ingredients: [
+      {
+        name: "Farinha de trigo tipo 1",
+        percentage: 85,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.FLOUR,
+      },
+      {
+        name: "Farinha integral",
+        percentage: 15,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.FLOUR,
+      },
+      {
+        name: "Água filtrada",
+        percentage: 78,
+        unit: MeasurementUnit.MILLILITERS,
+        category: IngredientCategory.LIQUID,
+      },
+      {
+        name: "Levain natural",
+        percentage: 20,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.LEAVENING,
+      },
+      {
+        name: "Sal marinho",
+        percentage: 2.2,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.SALT,
+      },
+    ],
+    instructions: `🔹 **Preparação do Levain** - Alimente o levain 12 horas antes com farinha integral e água filtrada. Deixe ativar até dobrar de volume.
+
+🔹 **Autólise** - Misture farinhas com água e deixe descansar por 30 minutos. Isso desenvolve o glúten naturalmente.
+
+🔹 **Incorporação** - Adicione o levain ativo e misture bem. Deixe descansar por 30 minutos antes de adicionar o sal.
+
+🔹 **Desenvolvimento** - Adicione o sal e faça dobras a cada 30 minutos por 3 horas. A massa deve ficar lisa e elástica.
+
+🔹 **Fermentação Lenta** - Deixe fermentar por 4-6 horas em temperatura controlada (22-24°C).
+
+🔹 **Refrigeração** - Transfira para geladeira por 12-18 horas para desenvolver sabor complexo.
+
+🔹 **Modelagem** - Divida e modele com tensão na superfície. Coloque em cestas de fermentação.
+
+🔹 **Fermentação Final** - Deixe fermentar por 2-3 horas em temperatura ambiente.
+
+🔹 **Cocção** - Asse a 250°C com vapor nos primeiros 20 minutos, depois 230°C por mais 30-35 minutos.`,
+  },
+  {
+    id: "special-2",
+    name: "Pão de Ciabatta Clássico",
+    recipeType: "special",
+    description:
+      "Pão italiano com alta hidratação, casca fina e miolo cheio de alvéolos irregulares. Perfeito para bruschettas e sanduíches gourmet.",
+    image: require("../../assets/images/pao-ciabatta.jpg"),
+    totalDoughWeight: 1000,
+    breadWeight: 400,
+    defaultQuantity: 2,
+    time: "18-24 horas",
+    difficultyLevel: "Médio",
+    cuisine: "Italiana",
+    location: "Ligúria, Itália",
+    ratings: "4.7 ⭐ (423 avaliações)",
+    ingredients: [
+      {
+        name: "Farinha de trigo tipo 00",
+        percentage: 100,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.FLOUR,
+      },
+      {
+        name: "Água",
+        percentage: 75,
+        unit: MeasurementUnit.MILLILITERS,
+        category: IngredientCategory.LIQUID,
+      },
+      {
+        name: "Fermento biológico seco",
+        percentage: 0.8,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.LEAVENING,
+      },
+      {
+        name: "Sal",
+        percentage: 2.5,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.SALT,
+      },
+      {
+        name: "Azeite extra virgem",
+        percentage: 3,
+        unit: MeasurementUnit.MILLILITERS,
+        category: IngredientCategory.FAT,
+      },
+    ],
+    instructions: `🔹 **Biga** - Prepare biga 16 horas antes: misture 30% da farinha com 60% da água e 0.1% do fermento. Deixe fermentar em geladeira.
+
+🔹 **Mistura Final** - Dissolva o biga na água restante. Adicione farinha e misture até formar massa homogênea.
+
+🔹 **Autólise** - Deixe descansar por 30 minutos para desenvolver glúten naturalmente.
+
+🔹 **Sal e Azeite** - Adicione sal e azeite. Faça dobras a cada 30 minutos por 2 horas.
+
+🔹 **Fermentação** - Deixe fermentar por 3-4 horas em temperatura ambiente.
+
+🔹 **Modelagem** - Divida em 2 porções e modele no formato de ciabatta (sola de sapato).
+
+🔹 **Fermentação Final** - Deixe fermentar por 1-2 horas em temperatura ambiente.
+
+🔹 **Cocção** - Asse a 240°C com vapor por 25-30 minutos até dourar bem.`,
+  },
+  {
+    id: "special-3",
+    name: "Pão de Forma Integral",
+    recipeType: "special",
+    description:
+      "Pão nutritivo e saudável com farinha integral, sementes e grãos. Rico em fibras e perfeito para uma alimentação equilibrada.",
+    image: require("../../assets/images/pao-forma-integral.jpg"),
+    totalDoughWeight: 800,
+    breadWeight: 750,
+    defaultQuantity: 1,
+    time: "4-5 horas",
+    difficultyLevel: "Fácil",
+    cuisine: "Brasileira",
+    location: "São Paulo, Brasil",
+    ratings: "4.6 ⭐ (298 avaliações)",
+    ingredients: [
+      {
+        name: "Farinha integral",
+        percentage: 70,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.FLOUR,
+      },
+      {
+        name: "Farinha branca",
+        percentage: 30,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.FLOUR,
+      },
+      {
+        name: "Água morna",
+        percentage: 65,
+        unit: MeasurementUnit.MILLILITERS,
+        category: IngredientCategory.LIQUID,
+      },
+      {
+        name: "Fermento biológico seco",
+        percentage: 1.2,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.LEAVENING,
+      },
+      {
+        name: "Sal",
+        percentage: 2,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.SALT,
+      },
+      {
+        name: "Sementes de girassol",
+        percentage: 8,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.OTHER,
+      },
+      {
+        name: "Sementes de linhaça",
+        percentage: 5,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.OTHER,
+      },
+    ],
+    instructions: `🔹 **Ativação do Fermento** - Dissolva o fermento em água morna com uma pitada de açúcar. Deixe ativar por 10 minutos.
+
+🔹 **Mistura** - Misture as farinhas com água e fermento ativado. Adicione sal e sementes.
+
+🔹 **Amassamento** - Amasse por 8-10 minutos até a massa ficar lisa e elástica.
+
+🔹 **Primeira Fermentação** - Deixe fermentar por 1.5-2 horas até dobrar de volume.
+
+🔹 **Modelagem** - Modele no formato de pão de forma e coloque em forma untada.
+
+🔹 **Segunda Fermentação** - Deixe fermentar por 45-60 minutos até aumentar bem de volume.
+
+🔹 **Cocção** - Asse a 180°C por 35-40 minutos até dourar e fazer som oco ao bater.
+
+🔹 **Resfriamento** - Deixe esfriar completamente antes de cortar.`,
+  },
+  {
+    id: "special-4",
+    name: "Pão de Fermentação Natural",
+    recipeType: "special",
+    description:
+      "Pão tradicional com fermentação natural de 48 horas, casca rústica e sabor complexo. Uma experiência única de panificação artesanal.",
+    image: require("../../assets/images/hungara_big.jpg"),
+    totalDoughWeight: 900,
+    breadWeight: 450,
+    defaultQuantity: 2,
+    time: "48 horas",
+    difficultyLevel: "Difícil",
+    cuisine: "Artesanal",
+    location: "Budapeste, Hungria",
+    ratings: "4.8 ⭐ (345 avaliações)",
+    ingredients: [
+      {
+        name: "Farinha de trigo tipo 1",
+        percentage: 80,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.FLOUR,
+      },
+      {
+        name: "Farinha de centeio",
+        percentage: 20,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.FLOUR,
+      },
+      {
+        name: "Água filtrada",
+        percentage: 72,
+        unit: MeasurementUnit.MILLILITERS,
+        category: IngredientCategory.LIQUID,
+      },
+      {
+        name: "Levain natural",
+        percentage: 25,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.LEAVENING,
+      },
+      {
+        name: "Sal marinho",
+        percentage: 2.2,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.SALT,
+      },
+      {
+        name: "Mel",
+        percentage: 3,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.OTHER,
+      },
+    ],
+    instructions: `🔹 **Preparação do Levain** - Alimente o levain 12 horas antes com farinha integral e água. Deixe ativar até dobrar de volume.
+
+🔹 **Autólise** - Misture farinhas com água e deixe descansar por 45 minutos para desenvolver glúten naturalmente.
+
+🔹 **Incorporação** - Adicione o levain ativo e o mel. Misture bem até incorporar completamente.
+
+🔹 **Desenvolvimento** - Adicione o sal e faça dobras a cada 45 minutos por 4 horas. A massa deve ficar lisa e elástica.
+
+🔹 **Fermentação Lenta** - Deixe fermentar por 6-8 horas em temperatura controlada (22-24°C).
+
+🔹 **Refrigeração** - Transfira para geladeira por 12-16 horas para desenvolver sabor complexo.
+
+🔹 **Modelagem** - Divida e modele com tensão na superfície. Coloque em cestas de fermentação.
+
+🔹 **Fermentação Final** - Deixe fermentar por 2-3 horas em temperatura ambiente.
+
+🔹 **Cocção** - Asse a 250°C com vapor nos primeiros 20 minutos, depois 230°C por mais 25-30 minutos.`,
+  },
 ];
 
 export function getRecipeById(id: string): Recipe | undefined {
