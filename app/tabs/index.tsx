@@ -1,6 +1,6 @@
 import {
   RecipeCarousel,
-  RestaurantSection,
+  BreadSection,
   SpecialRecipesSection,
   ThemedView,
 } from "@/src/components";
@@ -89,7 +89,7 @@ export default function HomeScreen() {
 
         {/* Bread Recipes Section */}
         <View style={styles.breadSection}>
-          <RestaurantSection
+          <BreadSection
             section={{
               title: "Pão de Fermentação Natural",
               restaurants: breadRecipes.map((recipe) => ({

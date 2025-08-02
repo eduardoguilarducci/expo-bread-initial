@@ -8,7 +8,7 @@ This directory contains the main source code for the ExpoBread application, orga
 src/
 ├── components/          # Reusable UI components
 │   ├── layout/         # Layout components (Header, Navigation, etc.)
-│   ├── restaurant/     # Restaurant-specific components
+│   ├── restaurant/     # Bread-specific components (using recipe data)
 │   └── ui/            # Base UI components (ThemedText, ThemedView, etc.)
 ├── data/              # Mock data and data sources
 ├── hooks/             # Custom React hooks
@@ -22,31 +22,31 @@ src/
 
 - Contains TypeScript interfaces and type definitions
 - Ensures type safety across the application
-- Example: `Restaurant`, `RestaurantCardProps`
+- Example: `BreadItem`, `SmallCardProps`, `Recipe`
 
 ### 2. **Data Layer** (`src/data/`)
 
 - Contains mock data and data sources
 - Separates data from UI components
-- Example: `mockRestaurants.ts`
+- Example: `mockRecipes.ts` (sole data source for all bread items)
 
 ### 3. **Services** (`src/services/`)
 
 - Contains business logic and API calls
 - Handles data operations and transformations
-- Example: `RestaurantService`
+- Example: `RecipeService`
 
 ### 4. **Hooks** (`src/hooks/`)
 
 - Custom React hooks for state management
 - Encapsulates complex logic and side effects
-- Example: `useRestaurants`
+- Example: `useRecipes`, `useBreadItems`
 
 ### 5. **Components** (`src/components/`)
 
 - **UI Components** (`ui/`): Base, reusable components
 - **Layout Components** (`layout/`): Page layout and navigation
-- **Feature Components** (`restaurant/`): Feature-specific components
+- **Feature Components** (`restaurant/`): Bread-specific components using recipe data
 
 ## Best Practices Implemented
 
@@ -59,26 +59,28 @@ src/
 
 ## Usage Examples
 
-### Using the Restaurant Service
+### Using Recipe Data Directly
 
 ```typescript
-import { RestaurantService } from "@/src/services/restaurantService";
+import { getAllRecipes } from "@/src/data/mockRecipes";
 
-const restaurants = await RestaurantService.getFeaturedRestaurants();
+const recipes = getAllRecipes();
+const breadRecipes = recipes.filter(recipe => recipe.recipeType === "bread");
 ```
 
 ### Using Custom Hooks
 
 ```typescript
-import { useRestaurants } from "@/src/hooks/useRestaurants";
+import { useRecipes, useBreadItems } from "@/src/hooks";
 
-const { featuredRestaurants, loading, error } = useRestaurants();
+const { recipes, loading, error } = useRecipes();
+const { featuredBreadItems, allBreadItems } = useBreadItems();
 ```
 
 ### Using Components
 
 ```typescript
-import { RestaurantCard, RestaurantSection } from "@/src/components";
+import { SmallCard, BreadSection } from "@/src/components";
 
-<RestaurantCard restaurant={restaurant} variant="featured" />;
+<SmallCard restaurant={breadItem} variant="featured" />;
 ```

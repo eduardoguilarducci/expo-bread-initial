@@ -467,7 +467,7 @@ export const mockRecipes: Recipe[] = [
   },
   {
     id: "r-1",
-    name: "Pizza Margherita",
+    name: "Pizza Napolitana",
     recipeType: "pizza",
     description:
       "A clássica pizza italiana com molho de tomate, mussarela fresca e manjericão. Simples, elegante e cheia de sabor.",
@@ -528,7 +528,7 @@ export const mockRecipes: Recipe[] = [
   },
   {
     id: "pizza-2",
-    name: "Pizza Pepperoni",
+    name: "New York Pizza",
     recipeType: "pizza",
     description:
       "Pizza americana com pepperoni picante, queijo mussarela e molho de tomate. Perfeita para quem gosta de sabores intensos.",
@@ -585,65 +585,7 @@ export const mockRecipes: Recipe[] = [
 
 🔹 **Cocção** - Asse a 260°C por 10-15 minutos até a borda dourar e o queijo derreter.`,
   },
-  {
-    id: "pizza-3",
-    name: "Pizza Quatro Queijos",
-    recipeType: "pizza",
-    description:
-      "Pizza sofisticada com quatro tipos de queijo: mussarela, parmesão, gorgonzola e provolone. Uma experiência gastronômica única.",
-    image: require("../../assets/images/big_3.png"),
-    totalDoughWeight: 800,
-    breadWeight: 200,
-    defaultQuantity: 4,
-    time: "2-3 horas",
-    difficultyLevel: "Difícil",
-    cuisine: "Italiana",
-    location: "Roma, Itália",
-    ratings: "4.8 ⭐ (289 avaliações)",
-    ingredients: [
-      {
-        name: "Farinha de trigo tipo 00",
-        percentage: 100,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.FLOUR,
-      },
-      {
-        name: "Água",
-        percentage: 68,
-        unit: MeasurementUnit.MILLILITERS,
-        category: IngredientCategory.LIQUID,
-      },
-      {
-        name: "Fermento biológico seco",
-        percentage: 1,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.LEAVENING,
-      },
-      {
-        name: "Sal",
-        percentage: 2.5,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.SALT,
-      },
-      {
-        name: "Azeite extra virgem",
-        percentage: 3,
-        unit: MeasurementUnit.MILLILITERS,
-        category: IngredientCategory.FAT,
-      },
-    ],
-    instructions: `🔹 **Preparação da Massa** - Misture farinha com fermento seco. Adicione água gradualmente até formar massa homogênea.
 
-🔹 **Desenvolvimento** - Adicione sal e amasse por 15 minutos até massa lisa. Incorpore azeite aos poucos.
-
-🔹 **Fermentação Lenta** - Deixe fermentar por 3-4 horas, fazendo dobras a cada 45 minutos.
-
-🔹 **Modelagem** - Divida em 4 porções e modele em discos finos (30cm).
-
-🔹 **Montagem** - Espalhe molho de tomate e distribua os quatro queijos uniformemente.
-
-🔹 **Cocção** - Asse a 270°C por 8-12 minutos até queijos derreterem e borda dourar.`,
-  },
   {
     id: "special-1",
     name: "Pão de Levain Artesanal",

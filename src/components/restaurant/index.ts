@@ -1,2 +1,2 @@
-export { RestaurantCard } from "./RestaurantCard";
-export { RestaurantSection } from "./RestaurantSection";
+export { BreadSection } from "./BreadSection";
+export { SmallCard } from "./SmallCard";

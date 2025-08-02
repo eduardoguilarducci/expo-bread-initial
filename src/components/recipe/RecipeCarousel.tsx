@@ -19,8 +19,8 @@ interface RecipeCarouselProps {
 }
 
 const { width: screenWidth } = Dimensions.get("window");
-const CARD_WIDTH = screenWidth * 0.6;
-const CARD_HEIGHT = 280; // Increased from 200 to 280 to accommodate all content
+const CARD_WIDTH = screenWidth * 0.828; // Increased by additional 15% from 0.72 to 0.828 (0.72 * 1.15 = 0.828)
+const CARD_HEIGHT = 320; // Increased from 280 to 320 to show all content properly
 
 export const RecipeCarousel: React.FC<RecipeCarouselProps> = ({
   recipes,
@@ -261,7 +261,7 @@ const styles = StyleSheet.create({
   },
   recipeImage: {
     width: "100%",
-    height: 140, // Increased from 120 to 140 for better image proportion
+    height: 180, // Increased from 140 to 180 for larger image display
     resizeMode: "cover",
   },
   recipeInfo: {

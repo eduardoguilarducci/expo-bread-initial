@@ -1,11 +1,11 @@
 import React from "react";
 import { Dimensions, StyleSheet, TouchableOpacity, View } from "react-native";
-import { RestaurantSection as RestaurantSectionType } from "../../types/restaurant";
+import { BreadSection as BreadSectionType } from "../../types/restaurant";
 import { ThemedText } from "../ui/ThemedText";
-import { RestaurantCard } from "./RestaurantCard";
+import { SmallCard } from "./SmallCard";
 
-interface RestaurantSectionProps {
-  section: RestaurantSectionType;
+interface BreadSectionProps {
+  section: BreadSectionType;
   onSeeAllPress?: () => void;
   horizontal?: boolean;
 }
@@ -23,11 +23,11 @@ const REMAINING_SPACE =
 const SIDE_MARGIN = REMAINING_SPACE / 2 - 4; // Shift grid 4px to the left
 const CARD_HEIGHT = CARD_WIDTH * 0.6 + 80; // Image height + info section height
 
-export function RestaurantSection({
+export function BreadSection({
   section,
   onSeeAllPress,
   horizontal = false,
-}: RestaurantSectionProps) {
+}: BreadSectionProps) {
   const isFeaturedGrid = !horizontal; // Show grid when NOT horizontal
   const data = isFeaturedGrid
     ? section.restaurants.filter((r) => r.showAtHomeScreen)
@@ -65,7 +65,7 @@ export function RestaurantSection({
                         },
                       ]}
                     >
-                      <RestaurantCard
+                      <SmallCard
                         restaurant={restaurant}
                         variant="featured"
                         sizeMultiplier={1}
@@ -82,7 +82,7 @@ export function RestaurantSection({
         <View style={styles.verticalList}>
           {data.map((restaurant) => (
             <View key={restaurant.id}>
-              <RestaurantCard restaurant={restaurant} variant="list" />
+              <SmallCard restaurant={restaurant} variant="list" />
               {restaurant.cuisine && (
                 <ThemedText style={styles.cuisine}>
                   {restaurant.cuisine}

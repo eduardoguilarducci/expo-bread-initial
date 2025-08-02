@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { RestaurantService } from "../services/restaurantService";
+import { getAllRecipes } from "../data/mockRecipes";
 import { Recipe } from "../types/recipe";
 
 interface UseRecipesReturn {
@@ -20,7 +20,7 @@ export const useRecipes = (): UseRecipesReturn => {
       setLoading(true);
       setError(null);
 
-      const allRecipes = await RestaurantService.getAllRecipes();
+      const allRecipes = getAllRecipes();
       setRecipes(allRecipes);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to load recipes");
@@ -31,7 +31,14 @@ export const useRecipes = (): UseRecipesReturn => {
 
   const searchRecipes = async (query: string): Promise<Recipe[]> => {
     try {
-      return await RestaurantService.searchRecipes(query);
+      const allRecipes = getAllRecipes();
+      return allRecipes.filter(
+        (recipe) =>
+          recipe.name.toLowerCase().includes(query.toLowerCase()) ||
+          recipe.description.toLowerCase().includes(query.toLowerCase()) ||
+          (recipe.location &&
+            recipe.location.toLowerCase().includes(query.toLowerCase()))
+      );
     } catch (err) {
       setError(err instanceof Error ? err.message : "Search failed");
       return [];

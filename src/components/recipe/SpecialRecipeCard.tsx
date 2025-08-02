@@ -14,7 +14,7 @@ import {
 interface SpecialRecipeCardProps {
   recipe: Recipe;
   onPress?: (recipe: Recipe) => void;
-  layout?: "horizontal" | "vertical";
+  layout?: "horizontal" | "vertical" | "mixed";
 }
 
 const { width: screenWidth } = Dimensions.get("window");
@@ -378,4 +378,4 @@ const styles = StyleSheet.create({
     color: "#666666",
     fontWeight: "500",
   },
-}); 
+});

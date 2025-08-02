@@ -8,18 +8,18 @@ import {
   Text,
   View,
 } from "react-native";
-import { RestaurantCardProps } from "../../types/restaurant";
+import { SmallCardProps } from "../../types/restaurant";
 import { ThemedText } from "../ui/ThemedText";
 
-export function RestaurantCard({
-  restaurant,
+export function SmallCard({
+  restaurant: breadItem,
   style,
   variant = "featured",
   sizeMultiplier = 1,
   imageHeight,
-}: RestaurantCardProps) {
+}: SmallCardProps) {
   const { image, name, location, difficultyLevel, time, cuisine, ratings } =
-    restaurant;
+    breadItem;
 
   // Animation
   const scale = useRef(new Animated.Value(1)).current;
@@ -48,11 +48,11 @@ export function RestaurantCard({
     router.push({
       pathname: "/recipeDetails",
       params: {
-        id: restaurant.id,
-        name: restaurant.name,
-        time: restaurant.time,
-        location: restaurant.location,
-        difficultyLevel: restaurant.difficultyLevel.toString(),
+        id: breadItem.id,
+        name: breadItem.name,
+        time: breadItem.time,
+        location: breadItem.location,
+        difficultyLevel: breadItem.difficultyLevel.toString(),
       },
     });
   };

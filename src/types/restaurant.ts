@@ -1,4 +1,4 @@
-export interface Restaurant {
+export interface BreadItem {
   id: string;
   name: string;
   location: string;
@@ -10,16 +10,16 @@ export interface Restaurant {
   ratings?: string;
 }
 
-export interface RestaurantCardProps {
-  restaurant: Restaurant;
+export interface SmallCardProps {
+  restaurant: BreadItem;
   style?: any;
   variant?: "featured" | "list";
   sizeMultiplier?: number;
   imageHeight?: number;
 }
 
-export interface RestaurantSection {
+export interface BreadSection {
   title: string;
-  restaurants: Restaurant[];
+  restaurants: BreadItem[];
   showSeeAll?: boolean;
 }
