@@ -211,6 +211,14 @@ const styles = StyleSheet.create({
   container: {
     marginVertical: 0, // Removed margin to bring sections directly together
     paddingLeft: 16, // Add left padding to align with other content
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 10,
   },
   title: {
     fontSize: 22,
@@ -222,6 +230,14 @@ const styles = StyleSheet.create({
   scrollContainer: {
     paddingRight: 16,
     paddingLeft: 0, // Ensure no extra left padding in scroll container
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.15,
+    shadowRadius: 3,
+    elevation: 8,
   },
   cardContainer: {
     marginRight: 16,
@@ -231,14 +247,16 @@ const styles = StyleSheet.create({
     height: CARD_HEIGHT,
     backgroundColor: "#FFFFFF",
     borderRadius: 12,
+    borderWidth: 1,
+    borderColor: "#E0E0E0",
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 6,
     },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8,
     overflow: "hidden",
   },
   recipeImage: {
