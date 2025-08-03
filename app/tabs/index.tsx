@@ -1,10 +1,11 @@
 import {
-  RecipeCarousel,
   BreadSection,
+  RecipeCarousel,
   SpecialRecipesSection,
   ThemedView,
 } from "@/src/components";
 import { useRecipes } from "@/src/hooks/useRecipes";
+import { useRouter } from "expo-router";
 import React from "react";
 import {
   ActivityIndicator,
@@ -17,6 +18,7 @@ import {
 
 export default function HomeScreen() {
   const { recipes, loading, error } = useRecipes();
+  const router = useRouter();
 
   // Filter bread recipes only
   const breadRecipes = recipes.filter(
@@ -55,7 +57,10 @@ export default function HomeScreen() {
   };
 
   const handleRecipePress = (recipe: any) => {
-    Alert.alert("Receita", `Abrindo receita: ${recipe.name}`);
+    router.push({
+      pathname: "/recipeDetails",
+      params: { id: recipe.id },
+    });
   };
 
   if (loading) {
@@ -91,7 +96,7 @@ export default function HomeScreen() {
         <View style={styles.breadSection}>
           <BreadSection
             section={{
-              title: "Pão de Fermentação Natural",
+              title: "Pães de Fermentação Natural e Clássicos",
               restaurants: breadRecipes.map((recipe) => ({
                 id: recipe.id,
                 name: recipe.name,

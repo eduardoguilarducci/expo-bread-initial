@@ -747,7 +747,7 @@ export const mockRecipes: Recipe[] = [
     recipeType: "pizza",
     description:
       "A clássica pizza italiana com molho de tomate, mussarela fresca e manjericão. Simples, elegante e cheia de sabor.",
-    image: require("../../assets/images/big_1.png"),
+    image: require("../../assets/images/neopolitan_pizza.jpg"),
     totalDoughWeight: 800,
     breadWeight: 200,
     defaultQuantity: 4,
@@ -808,7 +808,7 @@ export const mockRecipes: Recipe[] = [
     recipeType: "pizza",
     description:
       "Pizza americana com pepperoni picante, queijo mussarela e molho de tomate. Perfeita para quem gosta de sabores intensos.",
-    image: require("../../assets/images/big_2.png"),
+    image: require("../../assets/images/new_york_pizza.png"),
     totalDoughWeight: 800,
     breadWeight: 200,
     defaultQuantity: 4,
@@ -863,13 +863,13 @@ export const mockRecipes: Recipe[] = [
   },
   {
     id: "special-1",
-    name: "Pão Tortano",
+    name: "Tortano",
     recipeType: "special",
     description:
       "O Pão Tortano é um pão italiano em formato de anel, típico de Nápoles. É recheado com embutidos, queijos e ervas, combinando massa macia com casca crocante. Tradicionalmente servido em festas, especialmente na Páscoa.",
-    image: require("../../assets/images/pao_tortano.jpg"),
-    totalDoughWeight: 400,
-    breadWeight: 250,
+    image: require("../../assets/images/tortano.jpg"),
+    totalDoughWeight: 1,
+    breadWeight: 600,
     defaultQuantity: 1,
     time: "14h a 16h horas",
     difficultyLevel: "Difícil",
@@ -877,40 +877,47 @@ export const mockRecipes: Recipe[] = [
     location: "Nápoles, Itália",
     ingredients: [
       {
-        name: "Farinha de trigo tipo 1",
-        percentage: 65,
+        name: "Farinha Branca",
+        percentage: 100,
         unit: MeasurementUnit.GRAMS,
         category: IngredientCategory.FLOUR,
       },
+
       {
-        name: "Semolina",
-        percentage: 35,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.FLOUR,
-      },
-      {
-        name: "Água",
-        percentage: 68,
+        name: "Água Gelada",
+        percentage: 60,
         unit: MeasurementUnit.MILLILITERS,
         category: IngredientCategory.LIQUID,
       },
       {
-        name: "Fermento biológico seco",
-        percentage: 1.2,
+        name: "Sal",
+        percentage: 1,
         unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.LEAVENING,
+        category: IngredientCategory.OTHER,
       },
       {
-        name: "Sal",
-        percentage: 2.2,
+        name: "Levain",
+        percentage: 25,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.OTHER,
+      },
+      {
+        name: "Recheio",
+        percentage: 83.5,
         unit: MeasurementUnit.GRAMS,
         category: IngredientCategory.SALT,
       },
       {
-        name: "Azeite extra virgem",
-        percentage: 4,
-        unit: MeasurementUnit.MILLILITERS,
-        category: IngredientCategory.FAT,
+        name: "Semente de Funcho",
+        percentage: 2,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.OTHER,
+      },
+      {
+        name: "Pimenta Calabresa",
+        percentage: 1,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.OTHER,
       },
     ],
     instructions: `🔹 **Preparação da Massa** - Em uma tigela grande, misture as farinhas e faça um buraco no centro. Dissolva o fermento em parte da água morna e adicione ao centro. Misture gradualmente até formar uma massa homogênea.
@@ -930,278 +937,138 @@ export const mockRecipes: Recipe[] = [
 🔹 **Finalização** - Retire do forno e deixe esfriar sobre uma grade por pelo menos 30 minutos antes de cortar. Pincele com azeite ainda morno para dar brilho.`,
   },
   {
-    id: "5",
-    name: "Pão de Levain Artesanal",
-    recipeType: "special",
-    description:
-      "Pão de fermentação natural com 72 horas de desenvolvimento, casca crocante e miolo aerado. Uma obra-prima da panificação artesanal.",
-    image: require("../../assets/images/levain_big.jpg"),
-    totalDoughWeight: 1200,
-    breadWeight: 600,
-    defaultQuantity: 2,
-    time: "72 horas",
-    difficultyLevel: "Difícil",
-    cuisine: "Artesanal",
-    location: "São Francisco, EUA",
-    ratings: "4.9 ⭐ (567 avaliações)",
-    ingredients: [
-      {
-        name: "Farinha de trigo tipo 1",
-        percentage: 85,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.FLOUR,
-      },
-      {
-        name: "Farinha integral",
-        percentage: 15,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.FLOUR,
-      },
-      {
-        name: "Água filtrada",
-        percentage: 78,
-        unit: MeasurementUnit.MILLILITERS,
-        category: IngredientCategory.LIQUID,
-      },
-      {
-        name: "Levain natural",
-        percentage: 20,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.LEAVENING,
-      },
-      {
-        name: "Sal marinho",
-        percentage: 2.2,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.SALT,
-      },
-    ],
-    instructions: `🔹 **Preparação do Levain** - Alimente o levain 12 horas antes com farinha integral e água filtrada. Deixe ativar até dobrar de volume.
-
-🔹 **Autólise** - Misture farinhas com água e deixe descansar por 30 minutos. Isso desenvolve o glúten naturalmente.
-
-🔹 **Incorporação** - Adicione o levain ativo e misture bem. Deixe descansar por 30 minutos antes de adicionar o sal.
-
-🔹 **Desenvolvimento** - Adicione o sal e faça dobras a cada 30 minutos por 3 horas. A massa deve ficar lisa e elástica.
-
-🔹 **Fermentação Lenta** - Deixe fermentar por 4-6 horas em temperatura controlada (22-24°C).
-
-🔹 **Refrigeração** - Transfira para geladeira por 12-18 horas para desenvolver sabor complexo.
-
-🔹 **Modelagem** - Divida e modele com tensão na superfície. Coloque em cestas de fermentação.
-
-🔹 **Fermentação Final** - Deixe fermentar por 2-3 horas em temperatura ambiente.
-
-🔹 **Cocção** - Asse a 250°C com vapor nos primeiros 20 minutos, depois 230°C por mais 30-35 minutos.`,
-  },
-  {
     id: "special-2",
-    name: "Pão de Ciabatta Clássico",
+    name: "Fatia Húngara",
     recipeType: "special",
     description:
-      "Pão italiano com alta hidratação, casca fina e miolo cheio de alvéolos irregulares. Perfeito para bruschettas e sanduíches gourmet.",
-    image: require("../../assets/images/pao-ciabatta.jpg"),
-    totalDoughWeight: 1000,
-    breadWeight: 400,
-    defaultQuantity: 2,
-    time: "18-24 horas",
-    difficultyLevel: "Médio",
-    cuisine: "Italiana",
-    location: "Ligúria, Itália",
-    ratings: "4.7 ⭐ (423 avaliações)",
+      "Doce, macia e irresistível, a Fatia Húngara é um pãozinho enrolado recheado com coco e coberto por uma calda cremosa de leite condensado. Apesar do nome, sua origem é brasileira e não húngara — o nome foi apenas uma inspiração estrangeira para valorizar a receita. Muito popular em padarias e confeitarias, essa delícia combina textura fofinha com sabor marcante, ideal para acompanhar o café da tarde.",
+    image: require("../../assets/images/fatia_hungara.jpg"),
+    totalDoughWeight: 1,
+    breadWeight: 120,
+    defaultQuantity: 1,
+    time: "14h a 16h horas",
+    difficultyLevel: "Difícil",
+    cuisine: "Brasileira",
+    location: "São Paulo, Brasil",
     ingredients: [
       {
-        name: "Farinha de trigo tipo 00",
+        name: "Farinha Branca",
         percentage: 100,
         unit: MeasurementUnit.GRAMS,
         category: IngredientCategory.FLOUR,
       },
       {
-        name: "Água",
-        percentage: 75,
-        unit: MeasurementUnit.MILLILITERS,
+        name: "Leite Integral",
+        percentage: 24,
+        unit: MeasurementUnit.GRAMS,
         category: IngredientCategory.LIQUID,
       },
       {
-        name: "Fermento biológico seco",
+        name: "Leite Condensado",
+        percentage: 4,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.LIQUID,
+      },
+      {
+        name: "Leite em pó",
+        percentage: 40,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.LIQUID,
+      },
+      {
+        name: "Sal",
+        percentage: 1.5,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.SALT,
+      },
+      {
+        name: "Levain",
+        percentage: 50,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.OTHER,
+      },
+      {
+        name: "Fermento Biológico Seco",
         percentage: 0.8,
         unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.LEAVENING,
+        category: IngredientCategory.OTHER,
       },
       {
-        name: "Sal",
-        percentage: 2.5,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.SALT,
-      },
-      {
-        name: "Azeite extra virgem",
-        percentage: 3,
-        unit: MeasurementUnit.MILLILITERS,
-        category: IngredientCategory.FAT,
-      },
-    ],
-    instructions: `🔹 **Biga** - Prepare biga 16 horas antes: misture 30% da farinha com 60% da água e 0.1% do fermento. Deixe fermentar em geladeira.
-
-🔹 **Mistura Final** - Dissolva o biga na água restante. Adicione farinha e misture até formar massa homogênea.
-
-🔹 **Autólise** - Deixe descansar por 30 minutos para desenvolver glúten naturalmente.
-
-🔹 **Sal e Azeite** - Adicione sal e azeite. Faça dobras a cada 30 minutos por 2 horas.
-
-🔹 **Fermentação** - Deixe fermentar por 3-4 horas em temperatura ambiente.
-
-🔹 **Modelagem** - Divida em 2 porções e modele no formato de ciabatta (sola de sapato).
-
-🔹 **Fermentação Final** - Deixe fermentar por 1-2 horas em temperatura ambiente.
-
-🔹 **Cocção** - Asse a 240°C com vapor por 25-30 minutos até dourar bem.`,
-  },
-  {
-    id: "special-3",
-    name: "Pão de Forma Integral",
-    recipeType: "special",
-    description:
-      "Pão nutritivo e saudável com farinha integral, sementes e grãos. Rico em fibras e perfeito para uma alimentação equilibrada.",
-    image: require("../../assets/images/pao-forma-integral.jpg"),
-    totalDoughWeight: 800,
-    breadWeight: 750,
-    defaultQuantity: 1,
-    time: "4-5 horas",
-    difficultyLevel: "Fácil",
-    cuisine: "Brasileira",
-    location: "São Paulo, Brasil",
-    ratings: "4.6 ⭐ (298 avaliações)",
-    ingredients: [
-      {
-        name: "Farinha integral",
-        percentage: 70,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.FLOUR,
-      },
-      {
-        name: "Farinha branca",
-        percentage: 30,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.FLOUR,
-      },
-      {
-        name: "Água morna",
-        percentage: 65,
-        unit: MeasurementUnit.MILLILITERS,
-        category: IngredientCategory.LIQUID,
-      },
-      {
-        name: "Fermento biológico seco",
-        percentage: 1.2,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.LEAVENING,
-      },
-      {
-        name: "Sal",
-        percentage: 2,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.SALT,
-      },
-      {
-        name: "Sementes de girassol",
-        percentage: 8,
+        name: "Ovo (un)",
+        percentage: 0.3,
         unit: MeasurementUnit.GRAMS,
         category: IngredientCategory.OTHER,
       },
       {
-        name: "Sementes de linhaça",
-        percentage: 5,
+        name: "Manteiga (sem sal)",
+        percentage: 12,
         unit: MeasurementUnit.GRAMS,
         category: IngredientCategory.OTHER,
       },
-    ],
-    instructions: `🔹 **Ativação do Fermento** - Dissolva o fermento em água morna com uma pitada de açúcar. Deixe ativar por 10 minutos.
-
-🔹 **Mistura** - Misture as farinhas com água e fermento ativado. Adicione sal e sementes.
-
-🔹 **Amassamento** - Amasse por 8-10 minutos até a massa ficar lisa e elástica.
-
-🔹 **Primeira Fermentação** - Deixe fermentar por 1.5-2 horas até dobrar de volume.
-
-🔹 **Modelagem** - Modele no formato de pão de forma e coloque em forma untada.
-
-🔹 **Segunda Fermentação** - Deixe fermentar por 45-60 minutos até aumentar bem de volume.
-
-🔹 **Cocção** - Asse a 180°C por 35-40 minutos até dourar e fazer som oco ao bater.
-
-🔹 **Resfriamento** - Deixe esfriar completamente antes de cortar.`,
-  },
-  {
-    id: "special-4",
-    name: "Pão de Fermentação Natural",
-    recipeType: "special",
-    description:
-      "Pão tradicional com fermentação natural de 48 horas, casca rústica e sabor complexo. Uma experiência única de panificação artesanal.",
-    image: require("../../assets/images/hungara_big.jpg"),
-    totalDoughWeight: 900,
-    breadWeight: 450,
-    defaultQuantity: 2,
-    time: "48 horas",
-    difficultyLevel: "Difícil",
-    cuisine: "Artesanal",
-    location: "Budapeste, Hungria",
-    ratings: "4.8 ⭐ (345 avaliações)",
-    ingredients: [
       {
-        name: "Farinha de trigo tipo 1",
-        percentage: 80,
+        name: "Baunilha",
+        percentage: 1.5,
         unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.FLOUR,
+        category: IngredientCategory.OTHER,
       },
       {
-        name: "Farinha de centeio",
+        name: "Manteita",
         percentage: 20,
         unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.FLOUR,
+        category: IngredientCategory.OTHER,
       },
       {
-        name: "Água filtrada",
-        percentage: 72,
-        unit: MeasurementUnit.MILLILITERS,
-        category: IngredientCategory.LIQUID,
-      },
-      {
-        name: "Levain natural",
-        percentage: 25,
+        name: "Açúcar Refinado",
+        percentage: 10,
         unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.LEAVENING,
+        category: IngredientCategory.OTHER,
       },
       {
-        name: "Sal marinho",
-        percentage: 2.2,
+        name: "Coco Ralado",
+        percentage: 11,
         unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.SALT,
+        category: IngredientCategory.OTHER,
       },
       {
-        name: "Mel",
-        percentage: 3,
+        name: "Leite Condensado",
+        percentage: 23,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.OTHER,
+      },
+      {
+        name: "Água",
+        percentage: 22,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.OTHER,
+      },
+      {
+        name: "Açucar Confeiteiro",
+        percentage: 28,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.OTHER,
+      },
+      {
+        name: "Creme de Leite",
+        percentage: 10,
         unit: MeasurementUnit.GRAMS,
         category: IngredientCategory.OTHER,
       },
     ],
-    instructions: `🔹 **Preparação do Levain** - Alimente o levain 12 horas antes com farinha integral e água. Deixe ativar até dobrar de volume.
+    instructions: `🔹 **Preparação da Massa** - Em uma tigela grande, misture as farinhas e faça um buraco no centro. Dissolva o fermento em parte da água morna e adicione ao centro. Misture gradualmente até formar uma massa homogênea.
 
-🔹 **Autólise** - Misture farinhas com água e deixe descansar por 45 minutos para desenvolver glúten naturalmente.
+🔹 **Desenvolvimento do Glúten** - Adicione o sal e continue amassando por 8-10 minutos até a massa ficar lisa e elástica. Incorpore o azeite aos poucos, amassando até absorver completamente.
 
-🔹 **Incorporação** - Adicione o levain ativo e o mel. Misture bem até incorporar completamente.
+🔹 **Primeira Fermentação** - Coloque a massa em uma tigela untada com azeite, cubra com filme plástico e deixe fermentar por 1-2 horas até dobrar de volume.
 
-🔹 **Desenvolvimento** - Adicione o sal e faça dobras a cada 45 minutos por 4 horas. A massa deve ficar lisa e elástica.
+🔹 **Modelagem** - Divida a massa em 2 porções iguais. Modele cada uma em formato de rosca (tortano), criando um círculo com um furo no centro de cerca de 6cm de diâmetro.
 
-🔹 **Fermentação Lenta** - Deixe fermentar por 6-8 horas em temperatura controlada (22-24°C).
+🔹 **Segunda Fermentação** - Coloque os tortanos em assadeiras forradas com papel manteiga, cubra e deixe crescer por 45-60 minutos até aumentar 50% do volume.
 
-🔹 **Refrigeração** - Transfira para geladeira por 12-16 horas para desenvolver sabor complexo.
+🔹 **Preparação para Assar** - Preaqueça o forno a 220°C. Pincele a superfície com azeite e faça pequenos cortes decorativos com uma lâmina.
 
-🔹 **Modelagem** - Divida e modele com tensão na superfície. Coloque em cestas de fermentação.
+🔹 **Cocção** - Asse por 25-30 minutos até dourar bem. Reduza para 200°C nos últimos 10 minutos se necessário.
 
-🔹 **Fermentação Final** - Deixe fermentar por 2-3 horas em temperatura ambiente.
-
-🔹 **Cocção** - Asse a 250°C com vapor nos primeiros 20 minutos, depois 230°C por mais 25-30 minutos.`,
+🔹 **Finalização** - Retire do forno e deixe esfriar sobre uma grade por pelo menos 30 minutos antes de cortar. Pincele com azeite ainda morno para dar brilho.`,
   },
 ];
 
