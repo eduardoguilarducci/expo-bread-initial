@@ -21,18 +21,40 @@ export default function TabLayout() {
           ios: {
             // Use a transparent background on iOS to show the blur effect
             position: "absolute",
+            borderTopWidth: 0.5,
+            borderTopColor: colorScheme === "dark" ? "#2A2A2A" : "#E5E5E5",
+            shadowColor: "#000",
+            shadowOffset: {
+              width: 0,
+              height: -2,
+            },
+            shadowOpacity: 0.1,
+            shadowRadius: 3,
+            elevation: 8,
           },
-          default: {},
+          default: {
+            borderTopWidth: 0.5,
+            borderTopColor: colorScheme === "dark" ? "#2A2A2A" : "#E5E5E5",
+            shadowColor: "#000",
+            shadowOffset: {
+              width: 0,
+              height: -2,
+            },
+            shadowOpacity: 0.1,
+            shadowRadius: 3,
+            elevation: 8,
+            backgroundColor: Colors[colorScheme ?? "light"].background,
+          },
         }),
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
+          title: "Recipes",
           headerShown: false,
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="house.fill" color={color} />
+            <IconSymbol size={28} name="fork.knife" color={color} />
           ),
         }}
       />

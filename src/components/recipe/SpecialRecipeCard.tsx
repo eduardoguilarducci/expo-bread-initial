@@ -35,7 +35,7 @@ export const SpecialRecipeCard: React.FC<SpecialRecipeCardProps> = ({
       case "easy":
         return "#4CAF50";
       case "médio":
-      case "median":
+      case "medium":
         return "#FF9800";
       case "difícil":
       case "hard":
