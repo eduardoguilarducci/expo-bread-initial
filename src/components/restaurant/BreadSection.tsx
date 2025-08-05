@@ -1,5 +1,12 @@
 import React from "react";
-import { Dimensions, StyleSheet, TouchableOpacity, View } from "react-native";
+import {
+  Dimensions,
+  FlatList,
+  Platform,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { BreadSection as BreadSectionType } from "../../types/restaurant";
 import { ThemedText } from "../ui/ThemedText";
 import { SmallCard } from "./SmallCard";
@@ -12,23 +19,18 @@ interface BreadSectionProps {
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 const NUM_COLUMNS = 2;
-const HORIZONTAL_PADDING = 16; // Reduced from 24 to 16 for better screen utilization
-const CARD_MARGIN = 12; // Horizontal spacing between cards
+const HORIZONTAL_PADDING = 16;
+const CARD_MARGIN = Platform.OS === "android" ? 2 : 4;
 const CARD_WIDTH =
   (SCREEN_WIDTH - 2 * HORIZONTAL_PADDING - CARD_MARGIN) / NUM_COLUMNS;
-const TOTAL_CARDS_WIDTH = CARD_WIDTH * NUM_COLUMNS;
-const TOTAL_GAPS_WIDTH = CARD_MARGIN * (NUM_COLUMNS - 1);
-const REMAINING_SPACE =
-  SCREEN_WIDTH - 2 * HORIZONTAL_PADDING - TOTAL_CARDS_WIDTH - TOTAL_GAPS_WIDTH;
-const SIDE_MARGIN = REMAINING_SPACE / 2 - 4; // Shift grid 4px to the left
-const CARD_HEIGHT = CARD_WIDTH * 0.6 + 80; // Image height + info section height
+const CARD_HEIGHT = CARD_WIDTH * 0.6 + 80;
 
 export function BreadSection({
   section,
   onSeeAllPress,
   horizontal = false,
 }: BreadSectionProps) {
-  const isFeaturedGrid = !horizontal; // Show grid when NOT horizontal
+  const isFeaturedGrid = !horizontal;
   const data = isFeaturedGrid
     ? section.restaurants.filter((r) => r.showAtHomeScreen)
     : section.restaurants;
@@ -47,37 +49,26 @@ export function BreadSection({
       </View>
 
       {isFeaturedGrid ? (
-        <View style={styles.featuredGrid}>
-          {Array.from(
-            { length: Math.ceil(data.length / NUM_COLUMNS) },
-            (_, rowIndex) => (
-              <View key={rowIndex} style={styles.row}>
-                {data
-                  .slice(rowIndex * NUM_COLUMNS, (rowIndex + 1) * NUM_COLUMNS)
-                  .map((restaurant, colIndex) => (
-                    <View
-                      key={restaurant.id}
-                      style={[
-                        styles.cardContainer,
-                        {
-                          width: CARD_WIDTH,
-                          marginLeft: colIndex === 0 ? 0 : CARD_MARGIN, // Add gap between cards
-                        },
-                      ]}
-                    >
-                      <SmallCard
-                        restaurant={restaurant}
-                        variant="featured"
-                        sizeMultiplier={1}
-                        style={{ width: "100%", height: CARD_HEIGHT }}
-                        imageHeight={CARD_WIDTH * 0.6}
-                      />
-                    </View>
-                  ))}
-              </View>
-            )
+        <FlatList
+          data={data}
+          numColumns={NUM_COLUMNS}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <View style={styles.cardContainer}>
+              <SmallCard
+                restaurant={item}
+                variant="featured"
+                sizeMultiplier={1}
+                style={{ width: "100%", height: CARD_HEIGHT }}
+                imageHeight={CARD_WIDTH * 0.6}
+              />
+            </View>
           )}
-        </View>
+          contentContainerStyle={styles.gridContainer}
+          columnWrapperStyle={styles.row}
+          scrollEnabled={false}
+          showsVerticalScrollIndicator={false}
+        />
       ) : (
         <View style={styles.verticalList}>
           {data.map((restaurant) => (
@@ -105,7 +96,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 16,
-    marginBottom: 12, // Increased from 8 to 12 for better spacing
+    marginBottom: 12,
   },
   title: {
     fontSize: 22,
@@ -117,9 +108,8 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     fontSize: 16,
   },
-  featuredGrid: {
-    paddingHorizontal: HORIZONTAL_PADDING, // Restore padding for fluid layout
-    alignItems: "center", // Center the grid for symmetry
+  gridContainer: {
+    paddingHorizontal: Platform.OS === "android" ? 2 : 8,
   },
   verticalList: {
     paddingHorizontal: 16,
@@ -131,18 +121,10 @@ const styles = StyleSheet.create({
     marginLeft: 4,
   },
   cardContainer: {
-    marginBottom: 0,
-    marginTop: 0,
-    marginVertical: 0,
+    flex: 1,
+    margin: Platform.OS === "android" ? 1 : 4,
   },
   row: {
-    flexDirection: "row",
-    justifyContent: "flex-start", // Start from left
-    width: "100%", // Ensure full width
-    marginTop: 0,
-    marginVertical: 0,
-    marginBottom: 12, // Add fluid spacing between rows
-    paddingLeft: SIDE_MARGIN - 4, // Reduce left padding to shift left
-    paddingRight: SIDE_MARGIN + 4, // Increase right padding to compensate
+    justifyContent: "space-between",
   },
 });
