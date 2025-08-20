@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Text,
   View,
+  useWindowDimensions,
 } from "react-native";
 import { SmallCardProps } from "../../types/restaurant";
 import { ThemedText } from "../ui/ThemedText";
@@ -20,6 +21,9 @@ export function SmallCard({
 }: SmallCardProps) {
   const { image, name, location, difficultyLevel, time, cuisine, ratings } =
     breadItem;
+
+  // Get window dimensions for responsive sizing
+  const { width: windowWidth } = useWindowDimensions();
 
   // Animation
   const scale = useRef(new Animated.Value(1)).current;
@@ -57,9 +61,15 @@ export function SmallCard({
     });
   };
 
-  // Dynamic sizing
-  const cardWidth = 200 * sizeMultiplier;
-  const defaultImageHeight = 110 * sizeMultiplier;
+  // Dynamic sizing based on screen width
+  // For featured cards, we'll use the width provided in style
+  // For list cards, we'll use a percentage of screen width
+  const responsiveMultiplier = Math.min(1, windowWidth / 375); // Base scale on iPhone 8 width
+  const cardWidth =
+    variant === "list"
+      ? windowWidth * 0.9
+      : style?.width || 200 * sizeMultiplier * responsiveMultiplier;
+  const defaultImageHeight = 110 * sizeMultiplier * responsiveMultiplier;
 
   // Helper to get difficulty color based on text
   const getDifficultyColor = (difficulty: string) => {

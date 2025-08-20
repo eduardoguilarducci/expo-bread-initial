@@ -1,11 +1,11 @@
 import React from "react";
 import {
-  Dimensions,
   FlatList,
   Platform,
   StyleSheet,
   TouchableOpacity,
   View,
+  useWindowDimensions,
 } from "react-native";
 import { BreadSection as BreadSectionType } from "../../types/restaurant";
 import { ThemedText } from "../ui/ThemedText";
@@ -17,23 +17,28 @@ interface BreadSectionProps {
   horizontal?: boolean;
 }
 
-const SCREEN_WIDTH = Dimensions.get("window").width;
-const NUM_COLUMNS = 2;
 const HORIZONTAL_PADDING = 16;
-const CARD_MARGIN = Platform.OS === "android" ? 2 : 4;
-const CARD_WIDTH =
-  (SCREEN_WIDTH - 2 * HORIZONTAL_PADDING - CARD_MARGIN) / NUM_COLUMNS;
-const CARD_HEIGHT = CARD_WIDTH * 0.6 + 80;
+const NUM_COLUMNS = 2;
 
 export function BreadSection({
   section,
   onSeeAllPress,
   horizontal = false,
 }: BreadSectionProps) {
+  const { width: windowWidth } = useWindowDimensions();
   const isFeaturedGrid = !horizontal;
   const data = isFeaturedGrid
     ? section.restaurants.filter((r) => r.showAtHomeScreen)
     : section.restaurants;
+
+  // Calculate responsive card dimensions
+  const CARD_MARGIN = Platform.OS === "android" ? 2 : 4;
+  const CARD_WIDTH =
+    (windowWidth -
+      2 * HORIZONTAL_PADDING -
+      (NUM_COLUMNS - 1) * CARD_MARGIN * 2) /
+    NUM_COLUMNS;
+  const CARD_HEIGHT = CARD_WIDTH * 0.6 + 80;
 
   return (
     <View style={styles.container}>
@@ -54,12 +59,12 @@ export function BreadSection({
           numColumns={NUM_COLUMNS}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
-            <View style={styles.cardContainer}>
+            <View style={[styles.cardContainer, { height: CARD_HEIGHT }]}>
               <SmallCard
                 restaurant={item}
                 variant="featured"
                 sizeMultiplier={1}
-                style={{ width: "100%", height: CARD_HEIGHT }}
+                style={{ width: "100%", height: "100%" }}
                 imageHeight={CARD_WIDTH * 0.6}
               />
             </View>
@@ -90,6 +95,7 @@ export function BreadSection({
 const styles = StyleSheet.create({
   container: {
     marginBottom: 24,
+    width: "100%",
   },
   header: {
     flexDirection: "row",
@@ -97,11 +103,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 16,
     marginBottom: 12,
+    width: "100%",
   },
   title: {
     fontSize: 22,
     fontWeight: "bold",
     color: "#222",
+    flex: 1,
   },
   seeAll: {
     color: "#2ECC71",
@@ -110,9 +118,11 @@ const styles = StyleSheet.create({
   },
   gridContainer: {
     paddingHorizontal: Platform.OS === "android" ? 2 : 8,
+    width: "100%",
   },
   verticalList: {
     paddingHorizontal: 16,
+    width: "100%",
   },
   cuisine: {
     fontSize: 15,
@@ -126,5 +136,6 @@ const styles = StyleSheet.create({
   },
   row: {
     justifyContent: "space-between",
+    width: "100%",
   },
 });
