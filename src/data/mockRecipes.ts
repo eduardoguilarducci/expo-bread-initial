@@ -941,21 +941,35 @@ export const mockRecipes: Recipe[] = [
         category: IngredientCategory.OTHER,
       },
     ],
-    instructions: `🔹 **Preparação da Massa** - Em uma tigela grande, misture as farinhas e faça um buraco no centro. Dissolva o fermento em parte da água morna e adicione ao centro. Misture gradualmente até formar uma massa homogênea.
+    instructions: `🔹 **Preparação do Levain** - Alimentar o Levain na proporção 1-2-2 (Isca-Água-Farinha) e deixar crescer por aproximadamente 6hs ou até estar no ponto ideal.
 
-🔹 **Desenvolvimento do Glúten** - Adicione o sal e continue amassando por 8-10 minutos até a massa ficar lisa e elástica. Incorpore o azeite aos poucos, amassando até absorver completamente.
+🔹 **Autólise** - Quando o Levain estiver próximo do pico (2hs antes aproximadamente), misture as farinhas com a água gelada e deixe descansar por 2h horas. Este processo desenvolve o glúten naturalmente.
 
-🔹 **Primeira Fermentação** - Coloque a massa em uma tigela untada com azeite, cubra com filme plástico e deixe fermentar por 1-2 horas até dobrar de volume.
+🔹 **Incorporação** - Misturar bem o levain à massa (sovar bem pouco). Deixe descansar por 15 minutos.
 
-🔹 **Modelagem** - Divida a massa em 2 porções iguais. Modele cada uma em formato de rosca (tortano), criando um círculo com um furo no centro de cerca de 6cm de diâmetro.
+🔹 **Laminação / Primeira Dobra** - Fazer a laminação e salgar a massa.
 
-🔹 **Segunda Fermentação** - Coloque os tortanos em assadeiras forradas com papel manteiga, cubra e deixe crescer por 45-60 minutos até aumentar 50% do volume.
+🔹 **Descanso** - Descansar a massa por 3 horas em temperatura ambiente.
 
-🔹 **Preparação para Assar** - Preaqueça o forno a 220°C. Pincele a superfície com azeite e faça pequenos cortes decorativos com uma lâmina.
+🔹 **Dividir a massa** - Dividir a massa em duas partes (+- 550gr cada). Descansar 5 minutos (não você, a massa).
 
-🔹 **Cocção** - Asse por 25-30 minutos até dourar bem. Reduza para 200°C nos últimos 10 minutos se necessário.
+🔹 **Abrir a massa** - Abrir a primrira parte com o rolo +/- 50x50cm (usar farinha nesse processo para não grudar a massa na bancada).
 
-🔹 **Finalização** - Retire do forno e deixe esfriar sobre uma grade por pelo menos 30 minutos antes de cortar. Pincele com azeite ainda morno para dar brilho.`,
+🔹 **Recheio** - Salpicar metade do funcho e metade da calabresa.
+
+🔹 **Fatias de calabresa** - Colocar as fatias de calabresa sobre a massa, uma ao lado da outra.
+
+🔹 **Modelagem** - Enrolar e reservar.
+
+🔹 **Repetir** - Repetir os passos 7 ao 9 para a segunda massa.
+
+🔹 **Modelagem** - Colocar a primeira massa sobre a segunda, próximo a borda.
+
+🔹 **Levar na assadeira** - Colocar em uma assadeira, com furo no meio, undatada (+/- 22cm a 24cm).
+🔹 **Tampar* - Tampar com um bowl ou papel alumínio.
+🔹 **Assamento** - Levar ao forno a 200°C por 50 minutos.
+
+🔹 **Dourar** - Destampar e deixar + 10 minutos para dourar a parte superior.`,
   },
   {
     id: "special-2",
