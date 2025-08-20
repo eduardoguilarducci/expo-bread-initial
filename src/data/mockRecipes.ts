@@ -48,33 +48,33 @@ export const mockRecipes: Recipe[] = [
         category: IngredientCategory.SALT,
       },
     ],
-    instructions: `🔹 **Preparação do Levain** - Alimentar o Levain e deixar crescer por aproximadamente 6hs ou até estar no ponto ideal.
+    instructions: `🔹 **Preparação do Levain** - Alimentar o Levain na proporção 1-2-2 (Isca-Água-Farinha) e deixar crescer por aproximadamente 6hs ou até estar no ponto ideal.
 
 🔹 **Autólise** - Quando o Levain estiver próximo do pico (2hs antes aproximadamente), misture as farinhas com a água gelada e deixe descansar por 2h horas. Este processo desenvolve o glúten naturalmente.
 
-🔹 **Incorporação** - Misturar o levain à massa (sovar bem pouco). Deixe descansar por 15 minutos.
+🔹 **Incorporação** - Misturar bem o levain à massa (sovar bem pouco). Deixe descansar por 15 minutos.
 
 🔹 **Laminação / Primeira Dobra** - Fazer a laminação e salgar a massa. Esta já é considerada a primeira dobra. Deixe a massa descansar por 1 hora.
 
 🔹 **Segunda Dobra** - Faça a segunda dobra suavemente. Deixe descansar por 1 hora.
 
-🔹 **Pré-modelagem** - retirar do Bowl e bolear a massa sem apertar muito. Deixe descansando na bancada entre 5 a 10 minutos (dependendo da temperatura ambiente).
+🔹 **Pré-modelagem** - Retirar do Bowl e bolear a massa sem apertar muito. Deixe descansando na bancada entre 5 a 10 minutos (dependendo da temperatura ambiente).
 
-🔹 **Modelagem Final** - Modelo o pão no formato desejado, e acomode em cesto / banneton.
+🔹 **Modelagem Final** - Modelar o pão no formato desejado, e acomode em cesto / banneton.
 
-🔹 **Cresimento da Massa** - Deixe a massa crescer entre 2 a 3 horas (dependendo da temperatura ambiente).
+🔹 **Cresimento da Massa** - Deixe a massa crescer entre 2 a 3 horas ou até atingir o tamanho desejado (dependendo da temperatura ambiente).
 
-🔹 **Maturação na Geladeira** -Deixe a massa na geladeira. Mínimo de 6 horas e Máximo de 18 horas. 
+🔹 **Maturação na Geladeira** -Leve a massa para maturação na geladeira, entre 5 e 7°C. Mínimo de 6 horas e Máximo de 18 horas. 
 
-🔹 **Preparação do forno** - Pré aqueça o forno a 235°C com a bandeja vazia - 30 minutos.
+🔹 **Preparação do forno** - Pré aqueça o forno a 235°C com uma bandeja vazia abaixo da grade onde será colocado o pão - 30 minutos.
 
-🔹 **Vapor** - Ferva água separadamente para usar para fazer favor no momento da cocção.
+🔹 **Vapor** - Ferva água separadamente que será usada para fazer o vapor no momento da cocção.
 
-🔹 **Forneamento com Vapor** - Cocção por 15 minutos a 190°C. - Vapor num recipiente a parte.
+🔹 **Forneamento com Vapor** - Coloque o Pão no forno, acrescente a água fervente na badeja (para o vapor) nesse momento, feche e abaixe a temperatura do forno para 190°C – Asse por 15min.
 
-🔹 **Forneamento sem Vapor** - Gire o pão. Cocção por 15 minutos a 235°C. - Remover a bandeja do vapor.
+🔹 **Forneamento sem Vapor** - Retire a bandeja do forno, gire o Pão, aumente a temperatura para 235°C novamente – Asse por 15min.
 
-🔹 **Retirada e finalização da cocção** - Verifique se está na cor desejada, retire do forno e deixe resfirando em um local com arejadmento inferior por aproximadamente 1 hora. `,
+🔹 **Retirada e finalização da cocção** - Verifique se está na cor desejada, retire do forno e deixe resfirando em um local com arejamento inferior por aproximadamente 1 hora. `,
   },
   {
     id: "bread-2",
@@ -141,23 +141,35 @@ export const mockRecipes: Recipe[] = [
         category: IngredientCategory.OTHER,
       },
     ],
-    instructions: `🔹 **Ativação do Levain** - Certifique-se que o levain esteja bem ativo. Alimente-o 8-12 horas antes se necessário até dobrar de volume e apresentar aroma agradável.
+    instructions: `🔹 **Preparação do Levain** - Alimentar o Levain na proporção 1-2-2 (Isca-Água-Farinha) e deixar crescer por aproximadamente 6hs ou até estar no ponto ideal.
 
-🔹 **Mistura Inicial** - Misture as farinhas com a água e deixe em autólise por 45 minutos. Isso desenvolve a rede de glúten naturalmente.
+🔹 **Autólise** - Quando o Levain estiver próximo do pico (2hs antes aproximadamente), misture as farinhas com a água gelada e deixe descansar por 2h horas. Este processo desenvolve o glúten naturalmente.
 
-🔹 **Incorporação do Levain** - Adicione o levain ativo e o mel à massa. Misture bem até incorporar completamente. A massa ficará um pouco grudenta.
+🔹 **Incorporação** - Misturar bem o levain à massa (sovar bem pouco). Deixe descansar por 15 minutos.
 
-🔹 **Adição do Sal** - Após 30 minutos, adicione o sal marinho e misture até distribuir uniformemente. Faça movimentos de dobra para desenvolver o glúten.
+🔹 **Laminação / Primeira Dobra** - Fazer a laminação e salgar a massa. Esta já é considerada a primeira dobra. Deixe a massa descansar por 1 hora.
 
-🔹 **Fermentação Lenta** - Deixe fermentar por 4-5 horas, fazendo dobras a cada 45 minutos nas primeiras 3 horas. A massa deve aumentar cerca de 70% do volume.
+🔹 **Sova com recheio pastoso** - Acrescentar os grãos hidradados (Gergelim, Linhaça Marrom e Linhaça Dourada) e misturar a massa novamente, até incorporar. - Descansar 15 minutos.
 
-🔹 **Divisão e Pré-forma** - Divida em 4 porções iguais e faça uma pré-modelagem suave. Deixe descansar por 30 minutos sob pano úmido.
+🔹 **Segunda Dobra** - Faça a segunda dobra suavemente. Deixe descansar por 1 hora.
 
-🔹 **Modelagem Final** - Modele cada porção no formato desejado, criando tensão na superfície. Coloque em cestas de fermentação.
+🔹 **Pré-modelagem** - Retirar do Bowl e bolear a massa sem apertar muito. Deixe descansando na bancada entre 5 a 10 minutos (dependendo da temperatura ambiente).
 
-🔹 **Fermentação Final** - Fermente por 2-3 horas em temperatura ambiente ou 12-18 horas na geladeira para desenvolver sabor complexo.
+🔹 **Modelagem Final** - Modelar o pão no formato desejado, e acomode em cesto / banneton.
 
-🔹 **Cocção Artesanal** - Asse a 240°C com vapor nos primeiros 15 minutos, depois 220°C por mais 20-25 minutos até formar crosta dourada e som oco ao bater.`,
+🔹 **Cresimento da Massa** - Deixe a massa crescer entre 2 a 3 horas ou até atingir o tamanho desejado (dependendo da temperatura ambiente).
+
+🔹 **Maturação na Geladeira** -Leve a massa para maturação na geladeira, entre 5 e 7°C. Mínimo de 6 horas e Máximo de 18 horas. 
+
+🔹 **Preparação do forno** - Pré aqueça o forno a 235°C com uma bandeja vazia abaixo da grade onde será colocado o pão - 30 minutos.
+
+🔹 **Vapor** - Ferva água separadamente que será usada para fazer o vapor no momento da cocção.
+
+🔹 **Forneamento com Vapor** - Coloque o Pão no forno, acrescente a água fervente na badeja (para o vapor) nesse momento, feche e abaixe a temperatura do forno para 190°C – Asse por 15min.
+
+🔹 **Forneamento sem Vapor** - Retire a bandeja do forno, gire o Pão, aumente a temperatura para 235°C novamente – Asse por 15min.
+
+🔹 **Retirada e finalização da cocção** - Verifique se está na cor desejada, retire do forno e deixe resfirando em um local com arejamento inferior por aproximadamente 1 hora. `,
   },
   {
     id: "bread-4",
@@ -236,23 +248,33 @@ export const mockRecipes: Recipe[] = [
         category: IngredientCategory.OTHER,
       },
     ],
-    instructions: `🔹 **Ativação do Levain** - Certifique-se que o levain esteja bem ativo. Alimente-o 8-12 horas antes se necessário até dobrar de volume e apresentar aroma agradável.
+    instructions: `🔹 **Preparação do Levain** - Alimentar o Levain na proporção 1-2-2 (Isca-Água-Farinha) e deixar crescer por aproximadamente 6hs ou até estar no ponto ideal.
 
-🔹 **Mistura Inicial** - Misture as farinhas com a água e deixe em autólise por 45 minutos. Isso desenvolve a rede de glúten naturalmente.
+🔹 **Autólise** - Quando o Levain estiver próximo do pico (2hs antes aproximadamente), misture as farinhas, o funcho e as raspas de limão Siciliano com a água gelada e deixe descansar por 2h horas. Este processo desenvolve o glúten naturalmente.
 
-🔹 **Incorporação do Levain** - Adicione o levain ativo e o mel à massa. Misture bem até incorporar completamente. A massa ficará um pouco grudenta.
+🔹 **Incorporação** - Misturar bem o levain à massa (sovar bem pouco). Deixe descansar por 15 minutos.
 
-🔹 **Adição do Sal** - Após 30 minutos, adicione o sal marinho e misture até distribuir uniformemente. Faça movimentos de dobra para desenvolver o glúten.
+🔹 **Laminação / Primeira Dobra** - Fazer a laminação e salgar a massa. Esta já é considerada a primeira dobra. Deixe a massa descansar por 1 hora.
 
-🔹 **Fermentação Lenta** - Deixe fermentar por 4-5 horas, fazendo dobras a cada 45 minutos nas primeiras 3 horas. A massa deve aumentar cerca de 70% do volume.
+🔹 **Segunda Dobra** - Faça a segunda dobra suavemente. Deixe descansar por 1 hora.
 
-🔹 **Divisão e Pré-forma** - Divida em 4 porções iguais e faça uma pré-modelagem suave. Deixe descansar por 30 minutos sob pano úmido.
+🔹 **Pré-modelagem** - Retirar do Bowl e bolear a massa sem apertar muito. Deixe descansando na bancada entre 5 a 10 minutos (dependendo da temperatura ambiente).
 
-🔹 **Modelagem Final** - Modele cada porção no formato desejado, criando tensão na superfície. Coloque em cestas de fermentação.
+🔹 **Modelagem Final** - Modelar o pão no formato desejado, e acomode em cesto / banneton.
 
-🔹 **Fermentação Final** - Fermente por 2-3 horas em temperatura ambiente ou 12-18 horas na geladeira para desenvolver sabor complexo.
+🔹 **Cresimento da Massa** - Deixe a massa crescer entre 2 a 3 horas ou até atingir o tamanho desejado (dependendo da temperatura ambiente).
 
-🔹 **Cocção Artesanal** - Asse a 240°C com vapor nos primeiros 15 minutos, depois 220°C por mais 20-25 minutos até formar crosta dourada e som oco ao bater.`,
+🔹 **Maturação na Geladeira** -Leve a massa para maturação na geladeira, entre 5 e 7°C. Mínimo de 6 horas e Máximo de 18 horas. 
+
+🔹 **Preparação do forno** - Pré aqueça o forno a 235°C com uma bandeja vazia abaixo da grade onde será colocado o pão - 30 minutos.
+
+🔹 **Vapor** - Ferva água separadamente que será usada para fazer o vapor no momento da cocção.
+
+🔹 **Forneamento com Vapor** - Coloque o Pão no forno, acrescente a água fervente na badeja (para o vapor) nesse momento, feche e abaixe a temperatura do forno para 190°C – Asse por 15min.
+
+🔹 **Forneamento sem Vapor** - Retire a bandeja do forno, gire o Pão, aumente a temperatura para 235°C novamente – Asse por 15min.
+
+🔹 **Retirada e finalização da cocção** - Verifique se está na cor desejada, retire do forno e deixe resfirando em um local com arejamento inferior por aproximadamente 1 hora. `,
   },
   {
     id: "bread-5",
@@ -314,23 +336,33 @@ export const mockRecipes: Recipe[] = [
         category: IngredientCategory.OTHER,
       },
     ],
-    instructions: `🔹 **Ativação do Levain** - Certifique-se que o levain esteja bem ativo. Alimente-o 8-12 horas antes se necessário até dobrar de volume e apresentar aroma agradável.
+    instructions: `🔹 **Preparação do Levain** - Alimentar o Levain na proporção 1-2-2 (Isca-Água-Farinha) e deixar crescer por aproximadamente 6hs ou até estar no ponto ideal.
 
-🔹 **Mistura Inicial** - Misture as farinhas com a água e deixe em autólise por 45 minutos. Isso desenvolve a rede de glúten naturalmente.
+🔹 **Autólise** - Quando o Levain estiver próximo do pico (2hs antes aproximadamente), misture as farinhas com a água gelada e deixe descansar por 2h horas. Este processo desenvolve o glúten naturalmente.
 
-🔹 **Incorporação do Levain** - Adicione o levain ativo e o mel à massa. Misture bem até incorporar completamente. A massa ficará um pouco grudenta.
+🔹 **Incorporação** - Misturar bem o levain à massa (sovar bem pouco). Deixe descansar por 15 minutos.
 
-🔹 **Adição do Sal** - Após 30 minutos, adicione o sal marinho e misture até distribuir uniformemente. Faça movimentos de dobra para desenvolver o glúten.
+🔹 **Laminação / Primeira Dobra** - Fazer a laminação e salgar a massa. Esta já é considerada a primeira dobra. Deixe a massa descansar por 1 hora.
 
-🔹 **Fermentação Lenta** - Deixe fermentar por 4-5 horas, fazendo dobras a cada 45 minutos nas primeiras 3 horas. A massa deve aumentar cerca de 70% do volume.
+🔹 **Segunda Dobra** - Faça a segunda dobra suavemente. Deixe descansar por 1 hora.
 
-🔹 **Divisão e Pré-forma** - Divida em 4 porções iguais e faça uma pré-modelagem suave. Deixe descansar por 30 minutos sob pano úmido.
+🔹 **Pré-modelagem** - Retirar do Bowl e bolear a massa sem apertar muito. Deixe descansando na bancada entre 5 a 10 minutos (dependendo da temperatura ambiente).
 
-🔹 **Modelagem Final** - Modele cada porção no formato desejado, criando tensão na superfície. Coloque em cestas de fermentação.
+🔹 **Modelagem Final** - Modelar o pão no formato desejado, e acomode em cesto / banneton.
 
-🔹 **Fermentação Final** - Fermente por 2-3 horas em temperatura ambiente ou 12-18 horas na geladeira para desenvolver sabor complexo.
+🔹 **Cresimento da Massa** - Deixe a massa crescer entre 2 a 3 horas ou até atingir o tamanho desejado (dependendo da temperatura ambiente).
 
-🔹 **Cocção Artesanal** - Asse a 240°C com vapor nos primeiros 15 minutos, depois 220°C por mais 20-25 minutos até formar crosta dourada e som oco ao bater.`,
+🔹 **Maturação na Geladeira** -Leve a massa para maturação na geladeira, entre 5 e 7°C. Mínimo de 6 horas e Máximo de 18 horas. 
+
+🔹 **Preparação do forno** - Pré aqueça o forno a 235°C com uma bandeja vazia abaixo da grade onde será colocado o pão - 30 minutos.
+
+🔹 **Vapor** - Ferva água separadamente que será usada para fazer o vapor no momento da cocção.
+
+🔹 **Forneamento com Vapor** - Coloque o Pão no forno, acrescente a água fervente na badeja (para o vapor) nesse momento, feche e abaixe a temperatura do forno para 190°C – Asse por 15min.
+
+🔹 **Forneamento sem Vapor** - Retire a bandeja do forno, gire o Pão, aumente a temperatura para 235°C novamente – Asse por 15min.
+
+🔹 **Retirada e finalização da cocção** - Verifique se está na cor desejada, retire do forno e deixe resfirando em um local com arejamento inferior por aproximadamente 1 hora. `,
   },
   {
     id: "bread-6",
@@ -390,12 +422,7 @@ export const mockRecipes: Recipe[] = [
         unit: MeasurementUnit.GRAMS,
         category: IngredientCategory.OTHER,
       },
-      {
-        name: "Garan Massala",
-        percentage: 0.8,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.OTHER,
-      },
+
       {
         name: "Mel",
         percentage: 4.3,
@@ -409,23 +436,33 @@ export const mockRecipes: Recipe[] = [
         category: IngredientCategory.OTHER,
       },
     ],
-    instructions: `🔹 **Preparação Base** - Dissolva o fermento no leite morno com uma pitada de açúcar. Deixe ativar por 5-10 minutos até fazer espuma.
+    instructions: `🔹 **Preparação do Levain** - Alimentar o Levain na proporção 1-2-2 (Isca-Água-Farinha) e deixar crescer por aproximadamente 6hs ou até estar no ponto ideal.
 
-🔹 **Mistura Seca** - Em uma tigela grande, peneire a farinha com o cacau em pó. Adicione o açúcar restante e o sal, misturando bem os ingredientes secos.
+🔹 **Autólise** - Quando o Levain estiver próximo do pico (2hs antes aproximadamente), misture as farinhas e o cacau com a água gelada e deixe descansar por 2h horas. Este processo desenvolve o glúten naturalmente.
 
-🔹 **Formação da Massa** - Faça um buraco no centro dos ingredientes secos e adicione o fermento ativado. Misture até formar uma massa homogênea.
+🔹 **Incorporação** - Misturar bem o levain à massa (sovar bem pouco). Deixe descansar por 15 minutos.
 
-🔹 **Incorporação da Gordura** - Adicione a manteiga em temperatura ambiente e amasse por 8-10 minutos até a massa ficar lisa, elástica e levemente grudenta.
+🔹 **Laminação / Primeira Dobra** - Fazer a laminação, acrescentar as gotas de chocolate e o sal a massa. Esta já é considerada a primeira dobra. Deixe a massa descansar por 1 hora.
 
-🔹 **Primeira Fermentação** - Coloque a massa em tigela untada, cubra e deixe crescer por 1-1.5 horas até dobrar de volume. O cacau pode deixar a fermentação um pouco mais lenta.
+🔹 **Segunda Dobra** - Faça a segunda dobra suavemente. Deixe descansar por 1 hora.
 
-🔹 **Modelagem** - Divida a massa em 4 porções iguais e modele no formato desejado (bolinhas, pãezinhos alongados ou formato de brioche).
+🔹 **Pré-modelagem** - Retirar do Bowl e bolear a massa sem apertar muito. Deixe descansando na bancada entre 5 a 10 minutos (dependendo da temperatura ambiente).
 
-🔹 **Segunda Fermentação** - Disponha em assadeira untada, cubra e deixe crescer por 45-60 minutos até aumentar bem de volume.
+🔹 **Modelagem Final** - Modelar o pão no formato desejado, e acomode em cesto / banneton.
 
-🔹 **Finalização** - Pincele com leite ou gema batida para dar brilho. Pode polvilhar açúcar cristal por cima para caramelizar.
+🔹 **Cresimento da Massa** - Deixe a massa crescer entre 2 a 3 horas ou até atingir o tamanho desejado (dependendo da temperatura ambiente).
 
-🔹 **Cocção** - Asse a 180°C por 20-25 minutos até dourar e fazer som oco ao bater. Deixe esfriar antes de servir.`,
+🔹 **Maturação na Geladeira** -Leve a massa para maturação na geladeira, entre 5 e 7°C. Mínimo de 6 horas e Máximo de 18 horas. 
+
+🔹 **Preparação do forno** - Pré aqueça o forno a 235°C com uma bandeja vazia abaixo da grade onde será colocado o pão - 30 minutos.
+
+🔹 **Vapor** - Ferva água separadamente que será usada para fazer o vapor no momento da cocção.
+
+🔹 **Forneamento com Vapor** - Coloque o Pão no forno, acrescente a água fervente na badeja (para o vapor) nesse momento, feche e abaixe a temperatura do forno para 190°C – Asse por 15min.
+
+🔹 **Forneamento sem Vapor** - Retire a bandeja do forno, gire o Pão, aumente a temperatura para 235°C novamente – Asse por 15min.
+
+🔹 **Retirada e finalização da cocção** - Verifique se está na cor desejada, retire do forno e deixe resfirando em um local com arejamento inferior por aproximadamente 1 hora. `,
   },
   {
     id: "bread-7",
@@ -576,23 +613,23 @@ export const mockRecipes: Recipe[] = [
 🔹 **Forneamento** - Forno a 180°C com Vapor em 2 etapas de 15 mimnutos.`,
   },
   {
-    id: "bread-9",
-    name: "Pão Ciabatta",
+    id: "bread-gorgo",
+    name: "Pão Gorgonzola e Manjericão",
     recipeType: "bread",
     description:
-      "Pão Ciabatta é conhecido por sua casca crocante, miolo leve e irregular e sabor delicado. Criado na região do Vêneto na década de 1980 como resposta italiana ao pão baguete, seu nome significa “chinelo”, em referência ao formato achatado. Feito com alta hidratação e fermentação lenta, é perfeito para sanduíches ou para ser apreciado puro com azeite de oliva.",
-    image: require("../../assets/images/pao-ciabatta.jpg"),
+      "Pão rústico de fermentação natural, com miolo macio e casca crocante, que combina a intensidade marcante do gorgonzola com o frescor aromático do manjericão. Uma receita equilibrada, sofisticada e saborosa, ideal para acompanhar queijos, vinhos ou simplesmente ser apreciada puro.",
+    image: require("../../assets/images/pao_italiano.jpg"),
     totalDoughWeight: 0,
-    breadWeight: 400, // 150g cada pãozinho
-    defaultQuantity: 1, // Receita original faz 4 pãezinhos
-    time: "12h a 18h",
-    difficultyLevel: "Difícil",
-    cuisine: "Italian",
-    location: "Vêneto, Itália",
-    ratings: "",
+    breadWeight: 350,
+    defaultQuantity: 1,
+    time: "14h a 16h",
+    difficultyLevel: "Fácil",
+    cuisine: "Italiana",
+    location: "Toscana, Itália",
+
     ingredients: [
       {
-        name: "Farinha branca",
+        name: "Farinha Branca",
         percentage: 95,
         unit: MeasurementUnit.GRAMS,
         category: IngredientCategory.FLOUR,
@@ -604,89 +641,10 @@ export const mockRecipes: Recipe[] = [
         category: IngredientCategory.FLOUR,
       },
       {
-        name: "Água gelada",
+        name: "Água Gelada",
         percentage: 70,
         unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.LIQUID,
-      },
-      {
-        name: "Sal",
-        percentage: 2.2,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.SALT,
-      },
-      {
-        name: "Levain",
-        percentage: 10,
-        unit: MeasurementUnit.GRAMS,
         category: IngredientCategory.OTHER,
-      },
-      {
-        name: "Fermento Biológico Seco",
-        percentage: 1,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.OTHER,
-      },
-      {
-        name: "Óleo",
-        percentage: 3,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.OTHER,
-      },
-    ],
-    instructions: `🔹 **Ativação do Levain** - Certifique-se que o levain esteja bem ativo. Alimente-o 8-12 horas antes se necessário até dobrar de volume e apresentar aroma agradável.
-
-🔹 **Mistura Inicial** - Misture as farinhas com a água e deixe em autólise por 45 minutos. Isso desenvolve a rede de glúten naturalmente.
-
-🔹 **Incorporação do Levain** - Adicione o levain ativo e o mel à massa. Misture bem até incorporar completamente. A massa ficará um pouco grudenta.
-
-🔹 **Adição do Sal** - Após 30 minutos, adicione o sal marinho e misture até distribuir uniformemente. Faça movimentos de dobra para desenvolver o glúten.
-
-🔹 **Fermentação Lenta** - Deixe fermentar por 4-5 horas, fazendo dobras a cada 45 minutos nas primeiras 3 horas. A massa deve aumentar cerca de 70% do volume.
-
-🔹 **Divisão e Pré-forma** - Divida em 4 porções iguais e faça uma pré-modelagem suave. Deixe descansar por 30 minutos sob pano úmido.
-
-🔹 **Modelagem Final** - Modele cada porção no formato desejado, criando tensão na superfície. Coloque em cestas de fermentação.
-
-🔹 **Fermentação Final** - Fermente por 2-3 horas em temperatura ambiente ou 12-18 horas na geladeira para desenvolver sabor complexo.
-
-🔹 **Total de Unidades** - A cada 400 gr de farinha, faz 4 unidades de Ciabatta
-🔹 **Cocção Artesanal** - Asse a 240°C com vapor nos primeiros 15 minutos, depois 220°C por mais 20-25 minutos até formar crosta dourada e som oco ao bater.`,
-  },
-  {
-    id: "bread-10",
-    name: "Pão Francês",
-    recipeType: "bread",
-    description:
-      "Clássico das padarias brasileiras, o Pão Francês tem casca dourada e crocante com miolo leve e macio, ideal para o café da manhã ou sanduíches. Apesar do nome, sua origem é nacional — inspirado nas baguetes francesas, foi adaptado no Brasil no início do século XX para agradar ao paladar local. Hoje, é um dos pães mais consumidos do país, símbolo de sabor e tradição.",
-    image: require("../../assets/images/pao-frances.jpeg"),
-    totalDoughWeight: 0,
-    breadWeight: 300,
-    defaultQuantity: 1,
-    time: "14h a 16h",
-    difficultyLevel: "Médio",
-    cuisine: "Brasileira",
-    location: "ToRio de Janeiro, Brasil",
-
-    ingredients: [
-      {
-        name: "Farinha Branca",
-        percentage: 100,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.FLOUR,
-      },
-
-      {
-        name: "Água Gelada",
-        percentage: 55,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.OTHER,
-      },
-      {
-        name: "Sal",
-        percentage: 2.5,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.SALT,
       },
       {
         name: "Levain",
@@ -695,51 +653,114 @@ export const mockRecipes: Recipe[] = [
         category: IngredientCategory.OTHER,
       },
       {
-        name: "Açúcar",
-        percentage: 1.5,
+        name: "Sal",
+        percentage: 2,
         unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.OTHER,
-      },
-      {
-        name: "Banha",
-        percentage: 1.5,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.OTHER,
-      },
-      {
-        name: "Fermento Biológico Seco",
-        percentage: 1,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.OTHER,
+        category: IngredientCategory.SALT,
       },
     ],
-    instructions: `🔹 **Preparação do Levain** - Alimentar o Levain e deixar crescer por aproximadamente 6hs ou até estar no ponto ideal.
+    instructions: `🔹 **Preparação do Levain** - Alimentar o Levain na proporção 1-2-2 (Isca-Água-Farinha) e deixar crescer por aproximadamente 6hs ou até estar no ponto ideal.
 
 🔹 **Autólise** - Quando o Levain estiver próximo do pico (2hs antes aproximadamente), misture as farinhas com a água gelada e deixe descansar por 2h horas. Este processo desenvolve o glúten naturalmente.
 
-🔹 **Incorporação** - Misturar o levain à massa (sovar bem pouco). Deixe descansar por 15 minutos.
+🔹 **Incorporação** - Misturar bem o levain à massa (sovar bem pouco). Deixe descansar por 15 minutos.
 
 🔹 **Laminação / Primeira Dobra** - Fazer a laminação e salgar a massa. Esta já é considerada a primeira dobra. Deixe a massa descansar por 1 hora.
 
 🔹 **Segunda Dobra** - Faça a segunda dobra suavemente. Deixe descansar por 1 hora.
 
-🔹 **Pré-modelagem** - retirar do Bowl e bolear a massa sem apertar muito. Deixe descansando na bancada entre 5 a 10 minutos (dependendo da temperatura ambiente).
+🔹 **Pré-modelagem** - Retirar do Bowl e bolear a massa sem apertar muito. Deixe descansando na bancada entre 5 a 10 minutos (dependendo da temperatura ambiente).
 
-🔹 **Modelagem Final** - Modelo o pão no formato desejado, e acomode em cesto / banneton.
+🔹 **Modelagem Final** - Modelar o pão acrescentando o recheio no formato desejado, e acomode em cesto / banneton.
 
-🔹 **Cresimento da Massa** - Deixe a massa crescer entre 2 a 3 horas (dependendo da temperatura ambiente).
+🔹 **Cresimento da Massa** - Deixe a massa crescer entre 2 a 3 horas ou até atingir o tamanho desejado (dependendo da temperatura ambiente).
 
-🔹 **Maturação na Geladeira** -Deixe a massa na geladeira. Mínimo de 6 horas e Máximo de 18 horas. 
+🔹 **Maturação na Geladeira** -Leve a massa para maturação na geladeira, entre 5 e 7°C. Mínimo de 6 horas e Máximo de 18 horas. 
 
-🔹 **Preparação do forno** - Pré aqueça o forno a 235°C com a bandeja vazia - 30 minutos.
+🔹 **Preparação do forno** - Pré aqueça o forno a 235°C com uma bandeja vazia abaixo da grade onde será colocado o pão - 30 minutos.
 
-🔹 **Vapor** - Ferva água separadamente para usar para fazer favor no momento da cocção.
+🔹 **Vapor** - Ferva água separadamente que será usada para fazer o vapor no momento da cocção.
 
-🔹 **Forneamento com Vapor** - Cocção por 15 minutos a 190°C. - Vapor num recipiente a parte.
+🔹 **Forneamento com Vapor** - Coloque o Pão no forno, acrescente a água fervente na badeja (para o vapor) nesse momento, feche e abaixe a temperatura do forno para 190°C – Asse por 15min.
 
-🔹 **Forneamento sem Vapor** - Gire o pão. Cocção por 15 minutos a 235°C. - Remover a bandeja do vapor.
+🔹 **Forneamento sem Vapor** - Retire a bandeja do forno, gire o Pão, aumente a temperatura para 235°C novamente – Asse por 15min.
 
-🔹 **Retirada e finalização da cocção** - Verifique se está na cor desejada, retire do forno e deixe resfirando em um local com arejadmento inferior por aproximadamente 1 hora. `,
+🔹 **Retirada e finalização da cocção** - Verifique se está na cor desejada, retire do forno e deixe resfirando em um local com arejamento inferior por aproximadamente 1 hora. `,
+  },
+  {
+    id: "bread-azzapa",
+    name: "Pão Azeitona Azzapa",
+    recipeType: "bread",
+    description:
+      "Pão rústico de fermentação natural, de casca dourada e crocante, com miolo úmido e macio. Recheado com azeitonas Azzapa, traz um sabor marcante e levemente adocicado, que equilibra intensidade e suavidade em cada fatia. Perfeito para acompanhar queijos, embutidos ou ser degustado sozinho.",
+    image: require("../../assets/images/pao_italiano.jpg"),
+    totalDoughWeight: 0,
+    breadWeight: 350,
+    defaultQuantity: 1,
+    time: "14h a 16h",
+    difficultyLevel: "Fácil",
+    cuisine: "Italiana",
+    location: "Toscana, Itália",
+
+    ingredients: [
+      {
+        name: "Farinha Branca",
+        percentage: 95,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.FLOUR,
+      },
+      {
+        name: "Farinha Integral",
+        percentage: 5,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.FLOUR,
+      },
+      {
+        name: "Água Gelada",
+        percentage: 70,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.OTHER,
+      },
+      {
+        name: "Levain",
+        percentage: 30,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.OTHER,
+      },
+      {
+        name: "Sal",
+        percentage: 2,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.SALT,
+      },
+    ],
+    instructions: `🔹 **Preparação do Levain** - Alimentar o Levain na proporção 1-2-2 (Isca-Água-Farinha) e deixar crescer por aproximadamente 6hs ou até estar no ponto ideal.
+
+🔹 **Autólise** - Quando o Levain estiver próximo do pico (2hs antes aproximadamente), misture as farinhas com a água gelada e deixe descansar por 2h horas. Este processo desenvolve o glúten naturalmente.
+
+🔹 **Incorporação** - Misturar bem o levain à massa (sovar bem pouco). Deixe descansar por 15 minutos.
+
+🔹 **Laminação / Primeira Dobra** - Fazer a laminação e salgar a massa. Esta já é considerada a primeira dobra. Deixe a massa descansar por 1 hora.
+
+🔹 **Segunda Dobra** - Faça a segunda dobra suavemente. Deixe descansar por 1 hora.
+
+🔹 **Pré-modelagem** - Retirar do Bowl e bolear a massa sem apertar muito. Deixe descansando na bancada entre 5 a 10 minutos (dependendo da temperatura ambiente).
+
+🔹 **Modelagem Final** - Modelar o pão acrescentando o recheio no formato desejado, e acomode em cesto / banneton.
+
+🔹 **Cresimento da Massa** - Deixe a massa crescer entre 2 a 3 horas ou até atingir o tamanho desejado (dependendo da temperatura ambiente).
+
+🔹 **Maturação na Geladeira** -Leve a massa para maturação na geladeira, entre 5 e 7°C. Mínimo de 6 horas e Máximo de 18 horas. 
+
+🔹 **Preparação do forno** - Pré aqueça o forno a 235°C com uma bandeja vazia abaixo da grade onde será colocado o pão - 30 minutos.
+
+🔹 **Vapor** - Ferva água separadamente que será usada para fazer o vapor no momento da cocção.
+
+🔹 **Forneamento com Vapor** - Coloque o Pão no forno, acrescente a água fervente na badeja (para o vapor) nesse momento, feche e abaixe a temperatura do forno para 190°C – Asse por 15min.
+
+🔹 **Forneamento sem Vapor** - Retire a bandeja do forno, gire o Pão, aumente a temperatura para 235°C novamente – Asse por 15min.
+
+🔹 **Retirada e finalização da cocção** - Verifique se está na cor desejada, retire do forno e deixe resfirando em um local com arejamento inferior por aproximadamente 1 hora. `,
   },
   {
     id: "r-1",
@@ -1054,21 +1075,7 @@ export const mockRecipes: Recipe[] = [
         category: IngredientCategory.OTHER,
       },
     ],
-    instructions: `🔹 **Preparação da Massa** - Em uma tigela grande, misture as farinhas e faça um buraco no centro. Dissolva o fermento em parte da água morna e adicione ao centro. Misture gradualmente até formar uma massa homogênea.
-
-🔹 **Desenvolvimento do Glúten** - Adicione o sal e continue amassando por 8-10 minutos até a massa ficar lisa e elástica. Incorpore o azeite aos poucos, amassando até absorver completamente.
-
-🔹 **Primeira Fermentação** - Coloque a massa em uma tigela untada com azeite, cubra com filme plástico e deixe fermentar por 1-2 horas até dobrar de volume.
-
-🔹 **Modelagem** - Divida a massa em 2 porções iguais. Modele cada uma em formato de rosca (tortano), criando um círculo com um furo no centro de cerca de 6cm de diâmetro.
-
-🔹 **Segunda Fermentação** - Coloque os tortanos em assadeiras forradas com papel manteiga, cubra e deixe crescer por 45-60 minutos até aumentar 50% do volume.
-
-🔹 **Preparação para Assar** - Preaqueça o forno a 220°C. Pincele a superfície com azeite e faça pequenos cortes decorativos com uma lâmina.
-
-🔹 **Cocção** - Asse por 25-30 minutos até dourar bem. Reduza para 200°C nos últimos 10 minutos se necessário.
-
-🔹 **Finalização** - Retire do forno e deixe esfriar sobre uma grade por pelo menos 30 minutos antes de cortar. Pincele com azeite ainda morno para dar brilho.`,
+    instructions: `🔹 Em breve disponível`,
   },
 ];
 
