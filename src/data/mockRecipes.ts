@@ -625,7 +625,7 @@ export const mockRecipes: Recipe[] = [
     time: "14h a 16h",
     difficultyLevel: "Fácil",
     cuisine: "Italiana",
-    location: "Toscana, Itália",
+    location: "Brasil",
 
     ingredients: [
       {
@@ -700,7 +700,7 @@ export const mockRecipes: Recipe[] = [
     time: "14h a 16h",
     difficultyLevel: "Fácil",
     cuisine: "Italiana",
-    location: "Toscana, Itália",
+    location: "Brasil",
 
     ingredients: [
       {
