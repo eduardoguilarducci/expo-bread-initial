@@ -5,15 +5,17 @@ export interface Ingredient {
   category: IngredientCategory;
 }
 
+export type RecipeType = "bread" | "pizza" | "special";
+
 export interface Recipe {
   id: string;
   name: string;
-  recipeType: string;
+  recipeType: RecipeType;
   description: string;
   image: any;
   totalDoughWeight: number; // in grams (base unit for original recipe)
-  breadWeight: number; // Weight of individual bread in grams
-  defaultQuantity: number; // Default number of breads this recipe makes
+  breadWeight: number; // Weight of individual bread in grams or pizza disc in grams
+  defaultQuantity: number; // Default number of breads/pizzas this recipe makes
   ingredients: Ingredient[];
   instructions: string;
   time: string;
@@ -22,6 +24,11 @@ export interface Recipe {
   location?: string;
   ratings?: string;
   options?: RecipeOption[];
+  // Pizza specific properties
+  defaultHydration?: number; // Default hydration percentage for pizza dough
+  defaultDiscWeight?: number; // Default weight of pizza disc in grams
+  minHydration?: number; // Minimum allowed hydration (default 40%)
+  maxHydration?: number; // Maximum allowed hydration (default 100%)
 }
 
 export enum MeasurementUnit {

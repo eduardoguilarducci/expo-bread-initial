@@ -29,6 +29,10 @@ export default function RootLayout() {
           name="recipeDetails"
           options={{ title: "Recipe Details", headerShown: false }}
         />
+        <Stack.Screen
+          name="pizzaRecipeDetails"
+          options={{ headerShown: false }}
+        />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />

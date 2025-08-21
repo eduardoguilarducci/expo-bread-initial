@@ -57,10 +57,18 @@ export default function HomeScreen() {
   };
 
   const handleRecipePress = (recipe: any) => {
-    router.push({
-      pathname: "/recipeDetails",
-      params: { id: recipe.id },
-    });
+    // Route pizza recipes to the pizza details page
+    if (recipe.recipeType === "pizza") {
+      router.push({
+        pathname: "/pizzaRecipeDetails",
+        params: { id: recipe.id },
+      });
+    } else {
+      router.push({
+        pathname: "/recipeDetails",
+        params: { id: recipe.id },
+      });
+    }
   };
 
   if (loading) {
