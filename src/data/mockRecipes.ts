@@ -781,6 +781,7 @@ export const mockRecipes: Recipe[] = [
     cuisine: "Italiana",
     location: "Nápoles, Itália",
     ratings: "4.9 ⭐ (456 avaliações)",
+    pizzaType: "neapolitan",
     ingredients: [
       {
         name: "Farinha de trigo tipo 00",
@@ -840,6 +841,7 @@ export const mockRecipes: Recipe[] = [
     cuisine: "Americana",
     location: "Nova York, EUA",
     ratings: "4.7 ⭐ (312 avaliações)",
+    pizzaType: "ny",
     ingredients: [
       {
         name: "Farinha de trigo tipo 0",

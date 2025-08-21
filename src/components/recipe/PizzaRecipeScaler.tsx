@@ -27,7 +27,10 @@ export const PizzaRecipeScaler: React.FC<PizzaRecipeScalerProps> = ({
   const [hydration, setHydration] = useState(
     (recipe.defaultHydration || 65).toString()
   );
+  const [yeastType, setYeastType] = useState("fresh"); // "fresh" for Fermento Fresco, "dry" for Fermento Biológico Seco
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const [isYeastTypeDropdownVisible, setIsYeastTypeDropdownVisible] =
+    useState(false);
   const colorScheme = useColorScheme();
 
   // Validate hydration input using recipe-specific min/max values if available
@@ -66,6 +69,12 @@ export const PizzaRecipeScaler: React.FC<PizzaRecipeScalerProps> = ({
     setIsDropdownVisible(false);
   };
 
+  // Handle yeast type change
+  const handleYeastTypeChange = (newType: string) => {
+    setYeastType(newType);
+    setIsYeastTypeDropdownVisible(false);
+  };
+
   // Calculate ingredients based on pizza parameters
   const calculation = useMemo(() => {
     // Use the PizzaCalculationService to calculate the recipe
@@ -74,9 +83,10 @@ export const PizzaRecipeScaler: React.FC<PizzaRecipeScalerProps> = ({
       pizzaCount,
       parseInt(discWeight, 10),
       parseInt(hydration, 10),
-      UnitSystem.METRIC
+      UnitSystem.METRIC,
+      yeastType
     );
-  }, [recipe, pizzaCount, discWeight, hydration]);
+  }, [recipe, pizzaCount, discWeight, hydration, yeastType]);
 
   // Generate options from 1 to 100 for pizza count
   const pizzaCountOptions = Array.from({ length: 100 }, (_, i) => i + 1);
@@ -194,6 +204,52 @@ export const PizzaRecipeScaler: React.FC<PizzaRecipeScalerProps> = ({
           </View>
         </View>
 
+        {/* Yeast Type Input */}
+        <View style={styles.inputSection}>
+          <View style={styles.inputContainer}>
+            <ThemedText style={[styles.inputLabel, { color: "#1A1A1A" }]}>
+              Tipo de Fermento
+            </ThemedText>
+            <TouchableOpacity
+              style={styles.dropdownContainer}
+              onPress={() => setIsYeastTypeDropdownVisible(true)}
+              activeOpacity={0.7}
+            >
+              <View
+                style={[
+                  styles.dropdownButton,
+                  {
+                    backgroundColor: "#FFFFFF",
+                    borderWidth: 2,
+                    borderColor: "#2ECC71",
+                    shadowColor: "#000",
+                    shadowOpacity: 0.1,
+                    shadowRadius: 8,
+                    shadowOffset: { width: 0, height: 4 },
+                    elevation: 4,
+                  },
+                ]}
+              >
+                <ThemedText
+                  style={[styles.dropdownValue, { color: "#1A1A1A" }]}
+                >
+                  {yeastType === "fresh"
+                    ? "Fermento Fresco"
+                    : "Fermento Biológico Seco"}
+                </ThemedText>
+                <View style={styles.dropdownArrow}>
+                  <ThemedText style={[styles.arrowText, { color: "#2ECC71" }]}>
+                    ▼
+                  </ThemedText>
+                </View>
+              </View>
+            </TouchableOpacity>
+            <ThemedText style={[styles.dropdownHint, { color: "#2ECC71" }]}>
+              Toque para alterar
+            </ThemedText>
+          </View>
+        </View>
+
         {/* Summary Section */}
         <View style={styles.summarySection}>
           <View
@@ -227,8 +283,9 @@ export const PizzaRecipeScaler: React.FC<PizzaRecipeScalerProps> = ({
               </ThemedText>
               <ThemedText style={[styles.summaryValue, { color: "#1A1A1A" }]}>
                 {PizzaCalculationService.getYeastPercentage(
-                  recipe.ingredients
-                ).toFixed(1)}
+                  recipe.ingredients,
+                  yeastType
+                ).toFixed(2)}
                 %
               </ThemedText>
             </View>
@@ -239,7 +296,7 @@ export const PizzaRecipeScaler: React.FC<PizzaRecipeScalerProps> = ({
       {/* Ingredients List */}
       <IngredientList calculation={calculation} />
 
-      {/* Dropdown Modal */}
+      {/* Pizza Count Dropdown Modal */}
       <Modal
         visible={isDropdownVisible}
         transparent={true}
@@ -301,6 +358,73 @@ export const PizzaRecipeScaler: React.FC<PizzaRecipeScalerProps> = ({
                 </TouchableOpacity>
               ))}
             </ScrollView>
+          </View>
+        </TouchableOpacity>
+      </Modal>
+
+      {/* Yeast Type Dropdown Modal */}
+      <Modal
+        visible={isYeastTypeDropdownVisible}
+        transparent={true}
+        animationType="fade"
+        onRequestClose={() => setIsYeastTypeDropdownVisible(false)}
+      >
+        <TouchableOpacity
+          style={styles.modalOverlay}
+          activeOpacity={1}
+          onPress={() => setIsYeastTypeDropdownVisible(false)}
+        >
+          <View
+            style={[
+              styles.modalContent,
+              {
+                backgroundColor: "#FFFFFF",
+              },
+            ]}
+          >
+            <View
+              style={[
+                styles.dropdownHeader,
+                {
+                  borderBottomColor: "#E0E0E0",
+                },
+              ]}
+            >
+              <ThemedText style={[styles.dropdownTitle, { color: "#1A1A1A" }]}>
+                Selecione o tipo de fermento
+              </ThemedText>
+            </View>
+            <View style={styles.dropdownList}>
+              {[
+                { label: "Fermento Fresco", value: "fresh" },
+                { label: "Fermento Biológico Seco", value: "dry" },
+              ].map((option) => (
+                <TouchableOpacity
+                  key={option.value}
+                  style={[
+                    styles.dropdownOption,
+                    { borderBottomColor: "#F0F0F0" },
+                    yeastType === option.value && styles.dropdownOptionSelected,
+                  ]}
+                  onPress={() => handleYeastTypeChange(option.value)}
+                >
+                  <ThemedText
+                    style={[
+                      styles.dropdownOptionText,
+                      {
+                        color:
+                          yeastType === option.value ? "#FFFFFF" : "#1A1A1A",
+                      },
+                    ]}
+                  >
+                    {option.label}
+                  </ThemedText>
+                  {yeastType === option.value && (
+                    <ThemedText style={styles.checkmark}>✓</ThemedText>
+                  )}
+                </TouchableOpacity>
+              ))}
+            </View>
           </View>
         </TouchableOpacity>
       </Modal>

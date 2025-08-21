@@ -29,6 +29,7 @@ export interface Recipe {
   defaultDiscWeight?: number; // Default weight of pizza disc in grams
   minHydration?: number; // Minimum allowed hydration (default 40%)
   maxHydration?: number; // Maximum allowed hydration (default 100%)
+  pizzaType?: string; // Type of pizza (e.g., neapolitan, ny)
 }
 
 export enum MeasurementUnit {

@@ -16,7 +16,8 @@ export class PizzaCalculationService {
     pizzaCount: number,
     discWeight: number,
     hydrationPercentage: number,
-    unitSystem: UnitSystem = UnitSystem.METRIC
+    unitSystem: UnitSystem = UnitSystem.METRIC,
+    yeastType: string = "fresh" // "fresh" for Fermento Fresco, "dry" for Fermento Biológico Seco
   ): RecipeCalculation {
     // Calculate total dough mass based on disc weight and pizza count
     const totalDoughWeight = discWeight * pizzaCount;
@@ -31,7 +32,8 @@ export class PizzaCalculationService {
 
     // Get salt and yeast percentages from ingredients
     const saltPercentage = this.getSaltPercentage(recipe.ingredients) / 100; // Convert from % to decimal
-    const yeastPercentage = this.getYeastPercentage(recipe.ingredients) / 100; // Convert from % to decimal
+    const yeastPercentage =
+      this.getYeastPercentage(recipe.ingredients, yeastType) / 100; // Convert from % to decimal
     const hydrationDecimal = hydrationPercentage / 100; // Convert from % to decimal
 
     // Calculate flour weight using the formula
@@ -81,7 +83,8 @@ export class PizzaCalculationService {
         return this.calculateYeastIngredient(
           ingredient,
           yeastWeight,
-          unitSystem
+          unitSystem,
+          yeastType
         );
       }
       // For other ingredients, calculate based on flour weight
@@ -258,19 +261,16 @@ export class PizzaCalculationService {
     return saltIngredients.reduce((sum, ing) => sum + ing.percentage, 0);
   }
 
-  static getYeastPercentage(ingredients: Ingredient[]): number {
-    // Get yeast percentage over flour from ingredients
-    const yeastIngredients = ingredients.filter(
-      (ing) =>
-        ing.category === IngredientCategory.LEAVENING &&
-        (ing.name.toLowerCase().includes("levedura") ||
-          ing.name.toLowerCase().includes("fermento") ||
-          ing.name.toLowerCase().includes("yeast"))
-    );
-
-    if (yeastIngredients.length === 0) return 0.2; // Default yeast percentage if not specified
-
-    return yeastIngredients.reduce((sum, ing) => sum + ing.percentage, 0);
+  static getYeastPercentage(
+    ingredients: Ingredient[],
+    yeastType: string = "fresh"
+  ): number {
+    // Always use the specified percentages based on yeast type
+    if (yeastType === "dry") {
+      return 0.07; // 0.07% for Fermento Biológico Seco
+    } else {
+      return 0.2; // 0.20% for Fermento Fresco (default)
+    }
   }
 
   private static calculateSaltIngredient(
@@ -300,11 +300,14 @@ export class PizzaCalculationService {
   private static calculateYeastIngredient(
     ingredient: Ingredient,
     yeastWeight: number,
-    unitSystem: UnitSystem
+    unitSystem: UnitSystem,
+    yeastType: string = "fresh"
   ): CalculatedIngredient {
-    // For yeast, use the calculated yeast weight directly
-    // Even if percentage is 0 in the recipe, we use the calculated yeast weight
-    const calculatedAmountInGrams = yeastWeight;
+    // For yeast, use the calculated yeast weight directly based on the selected yeast type
+    let calculatedAmountInGrams = yeastWeight;
+
+    // No need to apply conversion factors here as we're already using the correct percentage
+    // in the getYeastPercentage method
 
     // Convert to appropriate display unit
     const { displayUnit, displayAmount } = this.convertToDisplayUnit(
