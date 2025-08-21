@@ -827,7 +827,7 @@ export const mockRecipes: Recipe[] = [
     name: "New York Pizza",
     recipeType: "pizza",
     description:
-      "Pizza americana com pepperoni picante, queijo mussarela e molho de tomate. Perfeita para quem gosta de sabores intensos.",
+      "Pizza estilo americano. Perfeita para quem quer sentir o gostinho de Nova York.",
     image: require("../../assets/images/new_york_pizza.png"),
     totalDoughWeight: 800,
     breadWeight: 200,
@@ -844,34 +844,40 @@ export const mockRecipes: Recipe[] = [
     pizzaType: "ny",
     ingredients: [
       {
-        name: "Farinha de trigo tipo 0",
+        name: "Farinha de trigo (tipo 00)",
         percentage: 100,
         unit: MeasurementUnit.GRAMS,
         category: IngredientCategory.FLOUR,
       },
       {
-        name: "Água",
+        name: "Água gelada",
         percentage: 62,
         unit: MeasurementUnit.MILLILITERS,
         category: IngredientCategory.LIQUID,
-      },
-      {
-        name: "Fermento biológico seco",
-        percentage: 1.2,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.LEAVENING,
-      },
-      {
-        name: "Sal",
-        percentage: 2.2,
-        unit: MeasurementUnit.GRAMS,
-        category: IngredientCategory.SALT,
       },
       {
         name: "Azeite extra virgem",
         percentage: 4,
         unit: MeasurementUnit.MILLILITERS,
         category: IngredientCategory.FAT,
+      },
+      {
+        name: "Sal",
+        percentage: 1.99,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.SALT,
+      },
+      {
+        name: "Fermento",
+        percentage: 1.2,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.LEAVENING,
+      },
+      {
+        name: "Açúcar",
+        percentage: 1.2,
+        unit: MeasurementUnit.GRAMS,
+        category: IngredientCategory.SWEETENER,
       },
     ],
     instructions: `🔹 **Preparação da Massa** - Dissolva o fermento na água morna. Misture com a farinha e adicione o sal gradualmente.

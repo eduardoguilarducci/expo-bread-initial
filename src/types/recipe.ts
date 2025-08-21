@@ -82,6 +82,7 @@ export interface RecipeCalculation {
   hydrationPercentage: number;
   saltPercentage: number;
   unitSystem: UnitSystem;
+  yeastType?: string; // Type of yeast used ("fresh" or "dry")
 }
 
 export interface RecipeOption {
