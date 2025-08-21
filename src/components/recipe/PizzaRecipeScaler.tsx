@@ -212,6 +212,31 @@ export const PizzaRecipeScaler: React.FC<PizzaRecipeScalerProps> = ({
             />
             <View style={styles.summaryRow}>
               <ThemedText style={[styles.summaryLabel, { color: "#666666" }]}>
+                SAL
+              </ThemedText>
+              <ThemedText style={[styles.summaryValue, { color: "#1A1A1A" }]}>
+                {calculation.saltPercentage.toFixed(1)}%
+              </ThemedText>
+            </View>
+            <View
+              style={[styles.summaryDivider, { backgroundColor: "#E0E0E0" }]}
+            />
+            <View style={styles.summaryRow}>
+              <ThemedText style={[styles.summaryLabel, { color: "#666666" }]}>
+                FERMENTO
+              </ThemedText>
+              <ThemedText style={[styles.summaryValue, { color: "#1A1A1A" }]}>
+                {PizzaCalculationService.getYeastPercentage(
+                  recipe.ingredients
+                ).toFixed(1)}
+                %
+              </ThemedText>
+            </View>
+            <View
+              style={[styles.summaryDivider, { backgroundColor: "#E0E0E0" }]}
+            />
+            <View style={styles.summaryRow}>
+              <ThemedText style={[styles.summaryLabel, { color: "#666666" }]}>
                 PESO TOTAL
               </ThemedText>
               <ThemedText style={[styles.summaryValue, { color: "#1A1A1A" }]}>
@@ -401,6 +426,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-around",
+    flexWrap: "wrap",
+    gap: 8,
   },
   summaryRow: {
     alignItems: "center",

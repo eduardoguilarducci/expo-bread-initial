@@ -18,15 +18,31 @@ export class PizzaCalculationService {
     hydrationPercentage: number,
     unitSystem: UnitSystem = UnitSystem.METRIC
   ): RecipeCalculation {
-    // Calculate total dough weight based on disc weight and pizza count
+    // Calculate total dough mass based on disc weight and pizza count
     const totalDoughWeight = discWeight * pizzaCount;
 
-    // Calculate flour weight based on hydration percentage
-    // Formula: flourWeight = totalDoughWeight / (1 + hydration/100)
-    const totalFlourWeight = totalDoughWeight / (1 + hydrationPercentage / 100);
+    // Calculate flour weight based on the formula from the spreadsheet
+    // Formula: F = T / (1 + H + s + y)
+    // Where:
+    // T = total dough mass (n * b)
+    // H = hydration as decimal (e.g., 65% = 0.65)
+    // s = salt percentage over flour (e.g., 2.5% = 0.025)
+    // y = yeast percentage over flour (e.g., 0.2% = 0.002)
 
-    // Calculate water weight based on hydration percentage
-    const waterWeight = totalFlourWeight * (hydrationPercentage / 100);
+    // Get salt and yeast percentages from ingredients
+    const saltPercentage = this.getSaltPercentage(recipe.ingredients) / 100; // Convert from % to decimal
+    const yeastPercentage = this.getYeastPercentage(recipe.ingredients) / 100; // Convert from % to decimal
+    const hydrationDecimal = hydrationPercentage / 100; // Convert from % to decimal
+
+    // Calculate flour weight using the formula
+    const totalFlourWeight =
+      totalDoughWeight /
+      (1 + hydrationDecimal + saltPercentage + yeastPercentage);
+
+    // Calculate other ingredient weights
+    const waterWeight = totalFlourWeight * hydrationDecimal;
+    const saltWeight = totalFlourWeight * saltPercentage;
+    const yeastWeight = totalFlourWeight * yeastPercentage;
 
     // Calculate ingredients based on baker's percentages
     const calculatedIngredients = recipe.ingredients.map((ingredient) => {
@@ -38,7 +54,7 @@ export class PizzaCalculationService {
           unitSystem
         );
       }
-      // For water, use the hydration percentage directly
+      // For water, use the calculated water weight
       else if (
         ingredient.category === IngredientCategory.LIQUID &&
         (ingredient.name.toLowerCase().includes("água") ||
@@ -48,6 +64,23 @@ export class PizzaCalculationService {
         return this.calculateWaterIngredient(
           ingredient,
           waterWeight,
+          unitSystem
+        );
+      }
+      // For salt, use the calculated salt weight
+      else if (ingredient.category === IngredientCategory.SALT) {
+        return this.calculateSaltIngredient(ingredient, saltWeight, unitSystem);
+      }
+      // For yeast, use the calculated yeast weight
+      else if (
+        ingredient.category === IngredientCategory.LEAVENING &&
+        (ingredient.name.toLowerCase().includes("levedura") ||
+          ingredient.name.toLowerCase().includes("fermento") ||
+          ingredient.name.toLowerCase().includes("yeast"))
+      ) {
+        return this.calculateYeastIngredient(
+          ingredient,
+          yeastWeight,
           unitSystem
         );
       }
@@ -67,7 +100,7 @@ export class PizzaCalculationService {
       quantity: pizzaCount,
       ingredients: calculatedIngredients,
       hydrationPercentage: hydrationPercentage,
-      saltPercentage: this.calculateSaltPercentage(recipe.ingredients),
+      saltPercentage: this.getSaltPercentage(recipe.ingredients),
       unitSystem,
     };
   }
@@ -77,9 +110,12 @@ export class PizzaCalculationService {
     totalFlourWeight: number,
     unitSystem: UnitSystem
   ): CalculatedIngredient {
-    // Calculate amount in grams
+    // For flour ingredients in pizza recipes, the percentage might be 0
+    // In this case, we use the total flour weight directly
     const calculatedAmountInGrams =
-      (ingredient.percentage / 100) * totalFlourWeight;
+      ingredient.percentage > 0
+        ? (ingredient.percentage / 100) * totalFlourWeight
+        : totalFlourWeight;
 
     // Convert to appropriate display unit
     const { displayUnit, displayAmount } = this.convertToDisplayUnit(
@@ -102,6 +138,7 @@ export class PizzaCalculationService {
     unitSystem: UnitSystem
   ): CalculatedIngredient {
     // For water, use the calculated water weight directly
+    // Even if percentage is 0 in the recipe, we use the calculated water weight
     const calculatedAmountInGrams = waterWeight;
 
     // Convert to appropriate display unit
@@ -211,16 +248,77 @@ export class PizzaCalculationService {
     }
   }
 
-  static calculateSaltPercentage(ingredients: Ingredient[]): number {
-    const flourWeight = ingredients
-      .filter((ing) => ing.category === IngredientCategory.FLOUR)
-      .reduce((sum, ing) => sum + ing.percentage, 0);
+  static getSaltPercentage(ingredients: Ingredient[]): number {
+    // Get salt percentage over flour from ingredients
+    const saltIngredients = ingredients.filter(
+      (ing) => ing.category === IngredientCategory.SALT
+    );
+    if (saltIngredients.length === 0) return 2.5; // Default salt percentage if not specified
 
-    const saltWeight = ingredients
-      .filter((ing) => ing.category === IngredientCategory.SALT)
-      .reduce((sum, ing) => sum + ing.percentage, 0);
+    return saltIngredients.reduce((sum, ing) => sum + ing.percentage, 0);
+  }
 
-    return flourWeight > 0 ? (saltWeight / flourWeight) * 100 : 0;
+  static getYeastPercentage(ingredients: Ingredient[]): number {
+    // Get yeast percentage over flour from ingredients
+    const yeastIngredients = ingredients.filter(
+      (ing) =>
+        ing.category === IngredientCategory.LEAVENING &&
+        (ing.name.toLowerCase().includes("levedura") ||
+          ing.name.toLowerCase().includes("fermento") ||
+          ing.name.toLowerCase().includes("yeast"))
+    );
+
+    if (yeastIngredients.length === 0) return 0.2; // Default yeast percentage if not specified
+
+    return yeastIngredients.reduce((sum, ing) => sum + ing.percentage, 0);
+  }
+
+  private static calculateSaltIngredient(
+    ingredient: Ingredient,
+    saltWeight: number,
+    unitSystem: UnitSystem
+  ): CalculatedIngredient {
+    // For salt, use the calculated salt weight directly
+    // Even if percentage is 0 in the recipe, we use the calculated salt weight
+    const calculatedAmountInGrams = saltWeight;
+
+    // Convert to appropriate display unit
+    const { displayUnit, displayAmount } = this.convertToDisplayUnit(
+      calculatedAmountInGrams,
+      ingredient.category,
+      unitSystem
+    );
+
+    return {
+      ...ingredient,
+      calculatedAmount: calculatedAmountInGrams,
+      displayUnit,
+      displayAmount,
+    };
+  }
+
+  private static calculateYeastIngredient(
+    ingredient: Ingredient,
+    yeastWeight: number,
+    unitSystem: UnitSystem
+  ): CalculatedIngredient {
+    // For yeast, use the calculated yeast weight directly
+    // Even if percentage is 0 in the recipe, we use the calculated yeast weight
+    const calculatedAmountInGrams = yeastWeight;
+
+    // Convert to appropriate display unit
+    const { displayUnit, displayAmount } = this.convertToDisplayUnit(
+      calculatedAmountInGrams,
+      ingredient.category,
+      unitSystem
+    );
+
+    return {
+      ...ingredient,
+      calculatedAmount: calculatedAmountInGrams,
+      displayUnit,
+      displayAmount,
+    };
   }
 
   static formatAmount(amount: number, unit: MeasurementUnit): string {
