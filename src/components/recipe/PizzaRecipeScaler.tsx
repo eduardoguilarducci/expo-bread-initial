@@ -22,7 +22,7 @@ export const PizzaRecipeScaler: React.FC<PizzaRecipeScalerProps> = ({
 }) => {
   const [pizzaCount, setPizzaCount] = useState(recipe.defaultQuantity || 1);
   const [discWeight, setDiscWeight] = useState(
-    (recipe.defaultDiscWeight || 250).toString()
+    (recipe.defaultDiscWeight || 300).toString()
   );
   const [hydration, setHydration] = useState(
     (recipe.defaultHydration || 65).toString()
@@ -170,7 +170,7 @@ export const PizzaRecipeScaler: React.FC<PizzaRecipeScalerProps> = ({
               value={discWeight}
               onChangeText={handleDiscWeightChange}
               keyboardType="numeric"
-              placeholder="250"
+              placeholder="300"
               placeholderTextColor="#AAAAAA"
             />
           </View>
@@ -260,7 +260,7 @@ export const PizzaRecipeScaler: React.FC<PizzaRecipeScalerProps> = ({
                 HIDRATAÇÃO
               </ThemedText>
               <ThemedText style={[styles.summaryValue, { color: "#1A1A1A" }]}>
-                {hydration}%
+                {parseFloat(hydration).toFixed(2)}%
               </ThemedText>
             </View>
             <View
@@ -271,7 +271,7 @@ export const PizzaRecipeScaler: React.FC<PizzaRecipeScalerProps> = ({
                 SAL
               </ThemedText>
               <ThemedText style={[styles.summaryValue, { color: "#1A1A1A" }]}>
-                {calculation.saltPercentage.toFixed(1)}%
+                {calculation.saltPercentage.toFixed(2)}%
               </ThemedText>
             </View>
             <View

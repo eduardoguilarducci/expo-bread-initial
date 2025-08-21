@@ -242,13 +242,8 @@ export class PizzaCalculationService {
   }
 
   private static roundToAppropriateDecimalPlaces(amount: number): number {
-    if (amount < 1) {
-      return Math.round(amount * 1000) / 1000; // 3 decimal places for small amounts
-    } else if (amount < 10) {
-      return Math.round(amount * 100) / 100; // 2 decimal places
-    } else {
-      return Math.round(amount); // Whole numbers for larger amounts
-    }
+    // Always use 2 decimal places for consistency
+    return Math.round(amount * 100) / 100;
   }
 
   static getSaltPercentage(ingredients: Ingredient[]): number {
@@ -337,12 +332,14 @@ export class PizzaCalculationService {
       return `${this.formatNumberWithCommas(roundedAmount)}${unit}`;
     }
 
-    return `${roundedAmount}${unit}`;
+    // For non-metric units, still use 2 decimal places
+    return `${amount.toFixed(2)}${unit}`;
   }
 
   private static formatNumberWithCommas(number: number): string {
     // Custom implementation for React Native
-    const numStr = number.toString();
+    // Format with fixed 2 decimal places
+    const numStr = number.toFixed(2);
     const parts = numStr.split(".");
 
     // Add dots as thousand separators to the integer part
