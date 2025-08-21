@@ -100,17 +100,17 @@ export const IngredientList: React.FC<IngredientListProps> = ({
           <View style={styles.summaryRow}>
             <View style={[styles.summaryItem, { backgroundColor: "#F8F9FA" }]}>
               <ThemedText style={[styles.summaryLabel, { color: "#666666" }]}>
-                🍞 Quantidade
+                🍕 Quantidade
               </ThemedText>
               <ThemedText style={[styles.summaryValue, { color: "#1A1A1A" }]}>
                 {calculation.quantity}{" "}
-                {calculation.quantity === 1 ? "pão" : "pães"}
+                {calculation.quantity === 1 ? "pizza" : "pizzas"}
               </ThemedText>
             </View>
 
             <View style={[styles.summaryItem, { backgroundColor: "#F8F9FA" }]}>
               <ThemedText style={[styles.summaryLabel, { color: "#666666" }]}>
-                🥖 Total massa
+                ⚖️ Total massa
               </ThemedText>
               <ThemedText style={[styles.summaryValue, { color: "#1A1A1A" }]}>
                 {RecipeCalculationService.formatTotalDoughWeight(calculation)}
@@ -121,7 +121,7 @@ export const IngredientList: React.FC<IngredientListProps> = ({
           <View style={styles.summaryRow}>
             <View style={[styles.summaryItem, { backgroundColor: "#F8F9FA" }]}>
               <ThemedText style={[styles.summaryLabel, { color: "#666666" }]}>
-                🔢 Massa por pão
+                🎯 Massa por pizza
               </ThemedText>
               <ThemedText style={[styles.summaryValue, { color: "#1A1A1A" }]}>
                 {RecipeCalculationService.formatDoughWeightPerBread(
@@ -154,7 +154,7 @@ export const IngredientList: React.FC<IngredientListProps> = ({
 
             <View style={[styles.summaryItem, { backgroundColor: "#F8F9FA" }]}>
               <ThemedText style={[styles.summaryLabel, { color: "#666666" }]}>
-                🍞 Farinha por pão
+                🧀 Farinha por pizza
               </ThemedText>
               <ThemedText style={[styles.summaryValue, { color: "#1A1A1A" }]}>
                 {RecipeCalculationService.formatFlourWeightPerBread(

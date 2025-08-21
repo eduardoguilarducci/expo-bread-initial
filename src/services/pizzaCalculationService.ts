@@ -96,7 +96,7 @@ export class PizzaCalculationService {
 
     return {
       totalWeight: totalDoughWeight,
-      breadWeight: discWeight, // For pizza, breadWeight is the disc weight
+      breadWeight: discWeight, // For pizza, this is the disc weight
       quantity: pizzaCount,
       ingredients: calculatedIngredients,
       hydrationPercentage: hydrationPercentage,

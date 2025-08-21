@@ -232,17 +232,6 @@ export const PizzaRecipeScaler: React.FC<PizzaRecipeScalerProps> = ({
                 %
               </ThemedText>
             </View>
-            <View
-              style={[styles.summaryDivider, { backgroundColor: "#E0E0E0" }]}
-            />
-            <View style={styles.summaryRow}>
-              <ThemedText style={[styles.summaryLabel, { color: "#666666" }]}>
-                PESO TOTAL
-              </ThemedText>
-              <ThemedText style={[styles.summaryValue, { color: "#1A1A1A" }]}>
-                {parseInt(discWeight, 10) * pizzaCount}g
-              </ThemedText>
-            </View>
           </View>
         </View>
       </View>
